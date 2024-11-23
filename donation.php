@@ -1,3 +1,6 @@
+<?php
+    require_once('php/config.php');
+?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -95,24 +98,18 @@
             <div class="container th-container">
                 <div class="row justify-content-center justify-content-xl-between align-items-center">
                     <div class="col-auto d-none d-md-block">
-                        <div class="header-links">
-                            <ul>
-                                <li class="d-none d-xl-inline-block"><i class="fa-sharp fa-regular fa-location-dot"></i>
-                                    <span>15 rue bizerte tunise</span>
-                                </li>
-                                <li class="d-none d-xl-inline-block"><i class="fa-regular fa-clock"></i> <span> 24/7
-                                        from 8:00 to 16:00</span></li>
-                            </ul>
-                        </div>
                     </div>
                     <div class="col-auto">
                         <div class="header-right">
                             <div class="header-links">
                                 <ul>
-                                    <li class="d-none d-md-inline-block"><a href="faq.php">FAQ</a></li>
-                                    <li class="d-none d-md-inline-block"><a href="contact.php">Support</a></li>
-                                    <li><a href="#login-form" class="popup-content">Sign In / Register<i
-                                                class="fa-regular fa-user"></i></a></li>
+                                    <?php if (isset($_SESSION['username'])): ?>
+                                        <li>Hello, <?php echo htmlspecialchars($_SESSION['username']); ?>!</li>
+                                    <?php else: ?>
+                                        <li class="d-none d-md-inline-block"><a href="faq.php">FAQ</a></li>
+                                        <li class="d-none d-md-inline-block"><a href="contact.php">Support</a></li>
+                                        <li><a href="#login-form" class="popup-content">Sign In / Register<i class="fa-regular fa-user"></i></a></li>
+                                    <?php endif; ?>
                                 </ul>
                             </div>
                         </div>
