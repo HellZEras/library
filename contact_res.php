@@ -62,36 +62,24 @@
             <div class="th-mobile-menu">
                 <ul>
                     <img src="assets/images/spl-stickylogo.png" alt="">
-                    <li class="menu-item-has-children mega-menu-wrap"><a class="active" href="index_adult.php">Home</a>
-                        <ul class="sub-menu">
-                            <li><a href="index_kids.php">kids page</a></li>
-                            <li><a href="index_adult.php">adult page</a></li>
-                        </ul>
-                    </li>
                     <li class="menu-item-has-children"><a href="activities.php">Activities</a>
                     </li>
                     <li class="menu-item-has-children"><a href="#">Pages</a>
                         <ul class="sub-menu">
                             <li class="menu-item-has-children"><a href="#">Shop adult</a>
                                 <ul class="sub-menu">
-                                    <li><a href="shop_book_adult.php">Shop</a></li>
-                                    <li><a href="shop-details_adult.php">Shop Details</a></li>
-                                    <li><a href="cart_adult.php">Cart Page</a></li>
+                                    <li><a href="shop_book.php">Shop</a></li>
                                     <li><a href="checkout.php">Checkout</a></li>
-                                    <li><a href="wishlist_adult.php">Wishlist</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children"><a href="#">Shop kids</a>
                                 <ul class="sub-menu">
-                                    <li><a href="shop_book_kids.php">Shop</a></li>
-                                    <li><a href="shop-details_kids.php">Shop Details</a></li>
-                                    <li><a href="cart_kids.php">Cart Page</a></li>
+                                    <li><a href="shop_book.php">Shop</a></li>
                                     <li><a href="checkout.php">Checkout</a></li>
-                                    <li><a href="wishlist_kids.php">Wishlist</a></li>
                                 </ul>
                             </li>
-                            <li><a href="reservation_kids.php">book reservation kids</a></li>
-                            <li><a href="reservation_adult.php">book reservation adult</a></li>
+                            <li><a href="reservation.php">book reservation kids</a></li>
+                            <li><a href="reservation.php">book reservation adult</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children"><a href="donation.php">donation</a>
@@ -113,6 +101,7 @@
                                 <ul>
                                     <?php if (isset($_SESSION['username'])): ?>
                                         <li>Hello, <?php echo htmlspecialchars($_SESSION['username']); ?>!</li>
+                                        <a href="/libary/php/logout.php">Logout</a>
                                     <?php else: ?>
                                         <li class="d-none d-md-inline-block"><a href="faq.php">FAQ</a></li>
                                         <li class="d-none d-md-inline-block"><a href="contact.php">Support</a></li>
@@ -130,73 +119,22 @@
                 <div class="container th-container">
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto">
-                            <div class="header-logo"><a href="index_adult.php"><img
+                            <div class="header-logo"><a href="index.php"><img
                                         src="assets/images/spl-stickylogo.png" alt="Tourm"></a></div>
                         </div>
                         <div class="col-auto me-xl-auto">
                             <nav class="main-menu d-none d-xl-inline-block">
                                 <ul>
-                                    <li class="menu-item-has-children mega-menu-wrap"><a class="active"
-                                            href="index_kids.php">Home</a>
-                                        <ul class="mega-menu mega-menu-content">
-                                            <li>
-                                                <div class="container">
-                                                    <div class="row gy-4">
-                                                        <div class="col-lg-3">
-                                                            <div class="mega-menu-box">
-                                                                <div class="mega-menu-img"><img
-                                                                        src="assets/img/hero/aaaa.png" alt="Home One">
-                                                                    <div class="btn-wrap"><a target="_blank"
-                                                                            href="index_adult.php" class="th-btn">View
-                                                                            page</a></div>
-                                                                </div>
-                                                                <h3 class="mega-menu-title"><a
-                                                                        href="index_adult.php"><span>01.</span>adult
-                                                                        book</a>
-                                                                </h3>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <div class="mega-menu-box">
-                                                                <div class="mega-menu-img"><img
-                                                                        src="assets/images/pic2.png" alt="Home Two">
-                                                                    <div class="btn-wrap"><a target="_blank"
-                                                                            href="index_kids.php" class="th-btn">View
-                                                                            page</a></div>
-                                                                </div>
-                                                                <h3 class="mega-menu-title"><a
-                                                                        href="index_kids.php"><span>02.</span>kids
-                                                                        book</a></h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </li>
                                     <li><a href="activites.php">Activities</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="sub-menu">
-                                            <li class="menu-item-has-children"><a href="#">Shop adult</a>
+                                            <li class="menu-item-has-children"><a href="#">Shop</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="shop_book_adult.php">Shop</a></li>
-                                                    <li><a href="shop-details_adult.php">Shop Details</a></li>
-                                                    <li><a href="cart_adult.php">Cart Page</a></li>
+                                                    <li><a href="shop_book.php">Shop</a></li>
                                                     <li><a href="checkout.php">Checkout</a></li>
-                                                    <li><a href="wishlist_adult.php">Wishlist</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item-has-children"><a href="#">Shop kids</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="shop_book_kids.php">Shop</a></li>
-                                                    <li><a href="shop-details_kids.php">Shop Details</a></li>
-                                                    <li><a href="cart_kids.php">Cart Page</a></li>
-                                                    <li><a href="checkout.php">Checkout</a></li>
-                                                    <li><a href="wishlist_kids.php">Wishlist</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="reservation_kids.php">book reservation kids</a></li>
-                                            <li><a href="reservation_adult.php">book reservation adult</a></li>
+                                            <li><a href="reservation.php">book reservation</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="donation.php">donation</a>
@@ -276,28 +214,28 @@
                 </div>
                 <div class="col-lg-6">
                     <div>
-                        <form action="" method="POST" class="contact-form style2 ajax-contact">
+                        <form action="/libary/php/contact_res.php" method="POST" class="contact-form style2">
                             <h3 class="sec-title mb-30 text-capitalize">contact us</h3>
                             <div class="row">
-                                <div class="col-12 form-group"><input type="text" class="form-control" name="name"
+                                <div class="col-12 form-group"><input type="text" class="form-control" name="first_name"
                                         id="name2" placeholder="First Name"> <img src="assets/img/icon/user.svg" alt="">
                                 </div>
-                                <div class="col-12 form-group"><input type="text" class="form-control" name="name"
+                                <div class="col-12 form-group"><input type="text" class="form-control" name="last_name"
                                         id="name3" placeholder="lastname"> <img src="assets/img/icon/user.svg" alt="">
                                 </div>
-                                <div class="col-12 form-group"><input type="email" class="form-control" name="email3"
+                                <div class="col-12 form-group"><input type="email" class="form-control" name="email"
                                         id="email3" placeholder="Your Mail"> <img src="assets/img/icon/mail.svg" alt="">
                                 </div>
-                                <div class="col-12 form-group"><input type="email" class="form-control" name="email3"
-                                        id="email3" placeholder="Your Mail"> <img src="assets/img/icon/mail.svg" alt="">
+                                <div class="col-12 form-group"><input type="email" class="form-control" name="email1"
+                                        id="email3" placeholder="Confirm your mail"> <img src="assets/img/icon/mail.svg" alt="">
                                 </div>
-                                <div class="col-12 form-group"><input type="date" class="form-control" name="email3"
-                                        id="d1" placeholder="toke date"> <img src="assets/img/icon/mail.svg" alt="">
+                                <div class="col-12 form-group"><input type="date" class="form-control" name="date1"
+                                        id="d1" placeholder="toke date"> 
                                 </div>
-                                <div class="col-12 form-group"><input type="date" class="form-control" name="email3"
-                                        id="d2" placeholder="return date"> <img src="assets/img/icon/mail.svg" alt="">
+                                <div class="col-12 form-group"><input type="date" class="form-control" name="date2"
+                                        id="d2" placeholder="return date">
                                 </div>
-                                <div class="form-group col-12"><select name="subject" id="subject"
+                                <div class="form-group col-12"><select name="sex" id="subject"
                                         class="form-select nice-select">
                                         <option value="Select Tour Type" selected="selected" disabled="disabled">sexe
                                         </option>
@@ -352,7 +290,7 @@
                             <h3 class="widget_title">Quick Links</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="index_adult.php">Home</a></li>
+                                    <li><a href="index.php">Home</a></li>
                                     <li><a href="contact.php">Terms of Service</a></li>
                                     <li><a href="contact.php">Tour Booking Now</a></li>
                                 </ul>
@@ -423,12 +361,21 @@
                     data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab"
                     aria-controls="pills-profile" aria-selected="true">Register</button></li>
         </ul>
+        <div id="login-form" class="popup-login-register mfp-hide">
+        <ul class="nav" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation"><button class="nav-menu" id="pills-home-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                    aria-selected="false">Login</button></li>
+            <li class="nav-item" role="presentation"><button class="nav-menu active" id="pills-profile-tab"
+                    data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab"
+                    aria-controls="pills-profile" aria-selected="true">Register</button></li>
+        </ul>
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                 <h3 class="box-title mb-30">Sign in to your account</h3>
                 <div class="th-login-form">
-                    <form action="https://html.themeholy.com/tourm/demo/mail.php" method="POST"
-                        class="login-form ajax-contact">
+                    <form action="/libary/php/login.php" method="POST"
+                        class="login-form">
                         <div class="row">
                             <div class="form-group col-12"><label>Username or email</label> <input type="text"
                                     class="form-control" name="email" id="email" required="required"></div>
@@ -445,11 +392,10 @@
             <div class="tab-pane fade active show" id="pills-profile" role="tabpanel"
                 aria-labelledby="pills-profile-tab">
                 <h3 class="th-form-title mb-30">Sign in to your account</h3>
-                <form action="https://html.themeholy.com/tourm/demo/mail.php" method="POST"
-                    class="login-form ajax-contact">
+                <form action="/libary/php/register.php" method="POST" class="login-form">
                     <div class="row">
                         <div class="form-group col-12"><label>Username*</label> <input type="text" class="form-control"
-                                name="usename" id="usename" required="required"></div>
+                                name="username" id="username" required="required"></div>
                         <div class="form-group col-12"><label>First name*</label> <input type="text"
                                 class="form-control" name="firstname" id="firstname" required="required"></div>
                         <div class="form-group col-12"><label>Last name*</label> <input type="text" class="form-control"
@@ -460,7 +406,7 @@
                                 type="text" class="form-control" name="new_email_confirm" id="new_email_confirm"
                                 required="required"></div>
                         <div class="form-group col-12"><label for="new_email_confirm">Password*</label> <input
-                        type="text" class="form-control" name="passwordf" id="pass"
+                        type="password" class="form-control" name="password" id="pass"
                         required="required"></div>
 
                         <div class="form-btn mt-20 col-12"><button class="th-btn btn-fw th-radius2">Sign up</button>

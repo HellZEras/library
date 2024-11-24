@@ -52,37 +52,25 @@
 
             <div class="th-mobile-menu">
                 <ul>
-                    <img src="assets/images/spl-stickylogo.png" alt="">
-                    <li class="menu-item-has-children mega-menu-wrap"><a class="active" href="index_adult.php">Home</a>
-                        <ul class="sub-menu">
-                            <li><a href="index_kids.php">kids page</a></li>
-                            <li><a href="index_adult.php">adult page</a></li>
-                        </ul>
-                    </li>
                     <li class="menu-item-has-children"><a href="activites.php">Activities</a>
                     </li>
                     <li class="menu-item-has-children"><a href="#">Pages</a>
                         <ul class="sub-menu">
                             <li class="menu-item-has-children"><a href="#">Shop adult</a>
                                 <ul class="sub-menu">
-                                    <li><a href="shop_book_adult.php">Shop</a></li>
-                                    <li><a href="shop-details_adult">Shop Details</a></li>
-                                    <li><a href="cart_adult.php">Cart Page</a></li>
+                                    <li><a href="shop_book.php">Shop</a></li>
+                                    <li><a href="shop-details">Shop Details</a></li>
                                     <li><a href="checkout.php">Checkout</a></li>
-                                    <li><a href="wishlist_adult.php">Wishlist</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children"><a href="#">Shop kids</a>
                                 <ul class="sub-menu">
-                                    <li><a href="shop_book_kids.php">Shop</a></li>
-                                    <li><a href="shop-details_kids.php">Shop Details</a></li>
-                                    <li><a href="cart_kids.php">Cart Page</a></li>
+                                    <li><a href="shop_book.php">Shop</a></li>
                                     <li><a href="checkout.php">Checkout</a></li>
-                                    <li><a href="wishlist_kids.php">Wishlist</a></li>
                                 </ul>
                             </li>
-                            <li><a href="reservation_kids.php">book reservation kids</a></li>
-                            <li><a href="reservation_adult.php">book reservation adult</a></li>
+                            <li><a href="reservation.php">book reservation kids</a></li>
+                            <li><a href="reservation.php">book reservation adult</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children"><a href="blog.php">Blog</a>
@@ -113,6 +101,7 @@
                         <ul>
                             <?php if (isset($_SESSION['username'])): ?>
                                 <li>Hello, <?php echo htmlspecialchars($_SESSION['username']); ?>!</li>
+                                <a href="/libary/php/logout.php">Logout</a>
                             <?php else: ?>
                                 <li class="d-none d-md-inline-block"><a href="faq.php">FAQ</a></li>
                                 <li class="d-none d-md-inline-block"><a href="contact.php">Support</a></li>
@@ -125,79 +114,27 @@
         </div>
     </div>
 </div>
-
         <div class="sticky-wrapper">
             <div class="menu-area">
                 <div class="container th-container">
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto">
-                            <div class="header-logo"><a href="index_adult.php"><img
+                            <div class="header-logo"><a href="index.php"><img
                                         src="assets/images/spl-stickylogo.png" alt="Tourm"></a></div>
                         </div>
                         <div class="col-auto me-xl-auto">
                             <nav class="main-menu d-none d-xl-inline-block">
                                 <ul>
-                                    <li class="menu-item-has-children mega-menu-wrap"><a class="active"
-                                            href="index_kids.php">Home</a>
-                                        <ul class="mega-menu mega-menu-content">
-                                            <li>
-                                                <div class="container">
-                                                    <div class="row gy-4">
-                                                        <div class="col-lg-3">
-                                                            <div class="mega-menu-box">
-                                                                <div class="mega-menu-img"><img
-                                                                        src="assets/img/hero/aaaa.png" alt="Home One">
-                                                                    <div class="btn-wrap"><a target="_blank"
-                                                                            href="index_adult.php" class="th-btn">View
-                                                                            page</a></div>
-                                                                </div>
-                                                                <h3 class="mega-menu-title"><a
-                                                                        href="index_adult.php"><span>01.</span>adult
-                                                                        book</a>
-                                                                </h3>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <div class="mega-menu-box">
-                                                                <div class="mega-menu-img"><img
-                                                                        src="assets/images/pic2.png" alt="Home Two">
-                                                                    <div class="btn-wrap"><a target="_blank"
-                                                                            href="index_kids.php" class="th-btn">View
-                                                                            page</a></div>
-                                                                </div>
-                                                                <h3 class="mega-menu-title"><a
-                                                                        href="index_kids.php"><span>02.</span>kids
-                                                                        book</a></h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </li>
                                     <li><a href="activites.php">Activities</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="sub-menu">
-                                            <li class="menu-item-has-children"><a href="#">Shop adult</a>
+                                            <li class="menu-item-has-children"><a href="#">Shop</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="shop_book_adult.php">Shop</a></li>
-                                                    <li><a href="shop-details_adult.php">Shop Details</a></li>
-                                                    <li><a href="cart_adult.php">Cart Page</a></li>
+                                                    <li><a href="shop_book.php">Shop</a></li>
                                                     <li><a href="checkout.php">Checkout</a></li>
-                                                    <li><a href="wishlist_adult.php">Wishlist</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item-has-children"><a href="#">Shop kids</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="shop_book_kids.php">Shop</a></li>
-                                                    <li><a href="shop-details_kids.php">Shop Details</a></li>
-                                                    <li><a href="cart_kids.php">Cart Page</a></li>
-                                                    <li><a href="checkout.php">Checkout</a></li>
-                                                    <li><a href="wishlist_kids.php">Wishlist</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="reservation_kids.php">book reservation kids</a></li>
-                                            <li><a href="reservation_adult.php">book reservation adult</a></li>
+                                            <li><a href="reservation.php">book reservation</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="donation.php">donation</a>
@@ -228,7 +165,7 @@
                                     data-ani-delay="0.2s">Get ready to read more book</span>
                                 <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">explore the world of
                                     books</h1>
-                                <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s"><a href="shop_book_kids.php"
+                                <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s"><a href="shop_book.php"
                                         class="th-btn th-icon">Explore</a> <a href="activites.php"
                                         class="th-btn style2 th-icon">Our Services</a></div>
                             </div>
@@ -643,7 +580,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-35"><a href="about.php" class="th-btn style3 th-icon">see More</a></div>
+                        <div class="mt-35"><a href="faq.php" class="th-btn style3 th-icon">see More</a></div>
                     </div>
                 </div>
             </div>
@@ -1157,7 +1094,7 @@
                             <h3 class="widget_title">Quick Links</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="index_adult.php">Home</a></li>
+                                    <li><a href="index.php">Home</a></li>
                                     <li><a href="contact.php">Terms of Service</a></li>
                                     <li><a href="contact.php">Tour Booking Now</a></li>
                                 </ul>
@@ -1230,8 +1167,8 @@
             <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                 <h3 class="box-title mb-30">Sign in to your account</h3>
                 <div class="th-login-form">
-                    <form action="https://html.themeholy.com/tourm/demo/mail.php" method="POST"
-                        class="login-form ajax-contact">
+                    <form action="/libary/php/login.php" method="POST"
+                        class="login-form">
                         <div class="row">
                             <div class="form-group col-12"><label>Username or email</label> <input type="text"
                                     class="form-control" name="email" id="email" required="required"></div>
@@ -1248,11 +1185,10 @@
             <div class="tab-pane fade active show" id="pills-profile" role="tabpanel"
                 aria-labelledby="pills-profile-tab">
                 <h3 class="th-form-title mb-30">Sign in to your account</h3>
-                <form action="https://html.themeholy.com/tourm/demo/mail.php" method="POST"
-                    class="login-form ajax-contact">
+                <form action="/libary/php/register.php" method="POST" class="login-form">
                     <div class="row">
                         <div class="form-group col-12"><label>Username*</label> <input type="text" class="form-control"
-                                name="usename" id="usename" required="required"></div>
+                                name="username" id="username" required="required"></div>
                         <div class="form-group col-12"><label>First name*</label> <input type="text"
                                 class="form-control" name="firstname" id="firstname" required="required"></div>
                         <div class="form-group col-12"><label>Last name*</label> <input type="text" class="form-control"
@@ -1263,7 +1199,7 @@
                                 type="text" class="form-control" name="new_email_confirm" id="new_email_confirm"
                                 required="required"></div>
                         <div class="form-group col-12"><label for="new_email_confirm">Password*</label> <input
-                        type="text" class="form-control" name="passwordf" id="pass"
+                        type="password" class="form-control" name="password" id="pass"
                         required="required"></div>
 
                         <div class="form-btn mt-20 col-12"><button class="th-btn btn-fw th-radius2">Sign up</button>

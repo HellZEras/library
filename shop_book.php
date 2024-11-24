@@ -1,5 +1,5 @@
 <?php
-    require_once('/php/config.php');
+    require_once('php/config.php');
 ?>
 <!doctype html>
 <html class="no-js" lang="zxx">
@@ -55,37 +55,27 @@
             <div class="th-mobile-menu">
                 <ul>
                     <img src="assets/images/spl-stickylogo.png" alt="">
-                    <li class="menu-item-has-children mega-menu-wrap"><a class="active" href="home-travel.php">Home</a>
-                        <ul class="sub-menu">
-                            <li><a href="index_kids.php">kids page</a></li>
-                            <li><a href="index_adult.php">adult page</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children"><a href="activitiess.php">Activities</a>
+                    <li class="menu-item-has-children"><a href="activities.php">Activities</a>
                     </li>
                     <li class="menu-item-has-children"><a href="#">Pages</a>
                         <ul class="sub-menu">
                             <li class="menu-item-has-children"><a href="#">Shop adult</a>
                                 <ul class="sub-menu">
-                                    <li><a href="shop_book_adult.php">Shop</a></li>
-                                    <li><a href="shop-details_adult.php">Shop Details</a></li>
-                                    <li><a href="cart_adult.php">Cart Page</a></li>
+                                    <li><a href="shop_book.php">Shop</a></li>
                                     <li><a href="checkout.php">Checkout</a></li>
-                                    <li><a href="wishlist_adult.php">Wishlist</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children"><a href="#">Shop kids</a>
                                 <ul class="sub-menu">
-                                    <li><a href="shop_book_kids.php">Shop</a></li>
-                                    <li><a href="shop-details_kids.php">Shop Details</a></li>
-                                    <li><a href="cart_kids.php.php">Cart Page</a></li>
+                                    <li><a href="shop_book.php">Shop</a></li>
                                     <li><a href="checkout.php">Checkout</a></li>
-                                    <li><a href="wishlist_kids.php">Wishlist</a></li>
                                 </ul>
                             </li>
-                            <li><a href="reservation_kids.php">book reservation kids</a></li>
-                            <li><a href="reservation_adult.php">book reservation adult</a></li>
+                            <li><a href="reservation.php">book reservation kids</a></li>
+                            <li><a href="reservation.php">book reservation adult</a></li>
                         </ul>
+                    </li>
+                    <li class="menu-item-has-children"><a href="donation.php">donation</a>
                     </li>
                     <li><a href="contact.php">Contact us</a></li>
                 </ul>
@@ -104,6 +94,7 @@
                                 <ul>
                                     <?php if (isset($_SESSION['username'])): ?>
                                         <li>Hello, <?php echo htmlspecialchars($_SESSION['username']); ?>!</li>
+                                        <a href="/libary/php/logout.php">Logout</a>
                                     <?php else: ?>
                                         <li class="d-none d-md-inline-block"><a href="faq.php">FAQ</a></li>
                                         <li class="d-none d-md-inline-block"><a href="contact.php">Support</a></li>
@@ -121,76 +112,25 @@
                 <div class="container th-container">
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto">
-                            <div class="header-logo"><a href="index_adult.php.php"><img
+                            <div class="header-logo"><a href="index.php"><img
                                         src="assets/images/spl-stickylogo.png" alt="Tourm"></a></div>
                         </div>
                         <div class="col-auto me-xl-auto">
                             <nav class="main-menu d-none d-xl-inline-block">
                                 <ul>
-                                    <li class="menu-item-has-children mega-menu-wrap"><a class="active"
-                                            href="index_kids.php">Home</a>
-                                        <ul class="mega-menu mega-menu-content">
-                                            <li>
-                                                <div class="container">
-                                                    <div class="row gy-4">
-                                                        <div class="col-lg-3">
-                                                            <div class="mega-menu-box">
-                                                                <div class="mega-menu-img"><img
-                                                                        src="assets/img/hero/aaaa.png" alt="Home One">
-                                                                    <div class="btn-wrap"><a target="_blank"
-                                                                            href="home-forest.php" class="th-btn">View
-                                                                            page</a></div>
-                                                                </div>
-                                                                <h3 class="mega-menu-title"><a
-                                                                        href="index_adult.php"><span>01.</span>adult
-                                                                        book</a>
-                                                                </h3>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <div class="mega-menu-box">
-                                                                <div class="mega-menu-img"><img
-                                                                        src="assets/images/pic2.png" alt="Home Two">
-                                                                    <div class="btn-wrap"><a target="_blank"
-                                                                            href="index_kids.php" class="th-btn">View
-                                                                            page</a></div>
-                                                                </div>
-                                                                <h3 class="mega-menu-title"><a
-                                                                        href="home-tour.php"><span>02.</span>kids
-                                                                        book</a></h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </li>
                                     <li><a href="activites.php">Activities</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="sub-menu">
-                                            <li class="menu-item-has-children"><a href="#">Shop adult</a>
+                                            <li class="menu-item-has-children"><a href="#">Shop</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="shop_book_adult.php">Shop</a></li>
-                                                    <li><a href="shop-details_adult.php">Shop Details</a></li>
-                                                    <li><a href="cart_adult.php">Cart Page</a></li>
+                                                    <li><a href="shop_book.php">Shop</a></li>
                                                     <li><a href="checkout.php">Checkout</a></li>
-                                                    <li><a href="wishlist_adult.php">Wishlist</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item-has-children"><a href="#">Shop kids</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="shop_book_kids.php">Shop</a></li>
-                                                    <li><a href="shop-details_kids.php">Shop Details</a></li>
-                                                    <li><a href="cart_kids.php">Cart Page</a></li>
-                                                    <li><a href="checkout.php">Checkout</a></li>
-                                                    <li><a href="wishlist_kids.php">Wishlist</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="reservation_kids.php">book reservation kids</a></li>
-                                            <li><a href="reservation_adult.php">book reservation adult</a></li>
+                                            <li><a href="reservation.php">book reservation</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="blog.php">Blog</a>
+                                    <li><a href="donation.php">donation</a>
                                     </li>
                                     <li><a href="contact.php">Contact us</a></li>
                                 </ul>
@@ -209,10 +149,10 @@
     <div class="breadcumb-wrapper" data-bg-src="assets/img/hero/menu2.jpeg">
         <div class="container">
             <div class="breadcumb-content">
-                <h1 class="breadcumb-title">kids Shops</h1>
+                <h1 class="breadcumb-title">Shop</h1>
                 <ul class="breadcumb-menu">
                     <li><a href="home-travel.php">Home</a></li>
-                    <li>Shops</li>
+                    <li>Shop</li>
                 </ul>
             </div>
         </div>
@@ -222,29 +162,9 @@
             <div class="th-sort-bar">
                 <div class="row justify-content-between align-items-center">
                     <div class="col-md-4">
-                        <div class="search-form-area">
-                            <form class="search-form"><input type="text" placeholder="Search"> <button type="submit"><i
-                                        class="fa-light fa-magnifying-glass"></i></button></form>
-                        </div>
                     </div>
                     <div class="col-md-auto">
                         <div class="sorting-filter-wrap">
-                            <div class="nav" role="tablist"><a class="active" href="#" id="tab-destination-grid"
-                                    data-bs-toggle="tab" data-bs-target="#tab-grid" role="tab" aria-controls="tab-grid"
-                                    aria-selected="true"><i class="fa-light fa-grid-2"></i></a> <a href="#"
-                                    id="tab-destination-list" data-bs-toggle="tab" data-bs-target="#tab-list" role="tab"
-                                    aria-controls="tab-list" aria-selected="false" class=""><i
-                                        class="fa-solid fa-list"></i></a></div>
-                            <form class="woocommerce-ordering" method="get"><select name="orderby" class="orderby"
-                                    aria-label="destination order">
-                                    <option value="menu_order" selected="selected">Default Sorting</option>
-                                    <option value="popularity">Sort by popularity</option>
-                                    <option value="rating">Sort by average rating</option>
-                                    <option value="date">Sort by latest</option>
-                                    <option value="price">Sort by price: low to high</option>
-                                    <option value="price-desc">Sort by price: high to low</option>
-                                </select></form>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -255,17 +175,13 @@
                         <div class="row gy-40">
                             <div class="col-xl-3 col-sm-6">
                                 <div class="th-product product-grid">
-                                    <div class="product-img"><img src="assets/images/Jacket (45).jpeg"
-                                            alt="Product Image">
-                                        <span class="product-tag">adult</span>
+                                    <div class="product-img"><img src="assets/images/Jacket.jpeg" alt="Product Image">
+                                        <span class="product-tag">kids</span>
                                         <div class="actions"><a href="#QuickView" class="icon-btn popup-content"><i
-                                                    class="far fa-eye"></i></a> <a href="cart.php" class="icon-btn"><i
-                                                    class="far fa-cart-plus"></i></a> <a href="wishlist.php"
-                                                class="icon-btn"><i class="far fa-heart"></i></a></div>
+                                                    class="far fa-eye"></i></a> <a href="checkout.php" class="icon-btn"><i
+                                                    class="far fa-cart-plus"></i></a></div>
                                     </div>
                                     <div class="product-content">
-                                        <h3 class="product-title"><a href="shop-details.php">war</a>
-                                        </h3>
                                         <span class="price">25.00 DT</span>
                                         <div class="woocommerce-product-rating"><span class="count">(5.00 Review)</span>
                                             <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
@@ -298,7 +214,7 @@
                     <div class="newsletter-top">
                         <div class="row gy-4 align-items-center">
                             <div class="col-lg-5">
-                                <h2 class="newsletter-title text-white text-capitalize mb-0">don't forgette to join us
+                                <h2 class="newsletter-title text-white text-capitalize mb-0">don't forget to join us
                                 </h2>
                             </div>
                             <div class="col-lg-7">
@@ -317,7 +233,7 @@
                             <h3 class="widget_title">Quick Links</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="index_adult.php">Home</a></li>
+                                    <li><a href="index.php">Home</a></li>
                                     <li><a href="contact.php">Terms of Service</a></li>
                                     <li><a href="contact.php">Tour Booking Now</a></li>
                                 </ul>
@@ -391,8 +307,8 @@
             <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                 <h3 class="box-title mb-30">Sign in to your account</h3>
                 <div class="th-login-form">
-                    <form action="https://html.themeholy.com/tourm/demo/mail.php" method="POST"
-                        class="login-form ajax-contact">
+                    <form action="/libary/php/login.php" method="POST"
+                        class="login-form">
                         <div class="row">
                             <div class="form-group col-12"><label>Username or email</label> <input type="text"
                                     class="form-control" name="email" id="email" required="required"></div>
@@ -409,11 +325,10 @@
             <div class="tab-pane fade active show" id="pills-profile" role="tabpanel"
                 aria-labelledby="pills-profile-tab">
                 <h3 class="th-form-title mb-30">Sign in to your account</h3>
-                <form action="https://html.themeholy.com/tourm/demo/mail.php" method="POST"
-                    class="login-form ajax-contact">
+                <form action="/libary/php/register.php" method="POST" class="login-form">
                     <div class="row">
                         <div class="form-group col-12"><label>Username*</label> <input type="text" class="form-control"
-                                name="usename" id="usename" required="required"></div>
+                                name="username" id="username" required="required"></div>
                         <div class="form-group col-12"><label>First name*</label> <input type="text"
                                 class="form-control" name="firstname" id="firstname" required="required"></div>
                         <div class="form-group col-12"><label>Last name*</label> <input type="text" class="form-control"
@@ -424,7 +339,7 @@
                                 type="text" class="form-control" name="new_email_confirm" id="new_email_confirm"
                                 required="required"></div>
                         <div class="form-group col-12"><label for="new_email_confirm">Password*</label> <input
-                        type="text" class="form-control" name="passwordf" id="pass"
+                        type="password" class="form-control" name="password" id="pass"
                         required="required"></div>
 
                         <div class="form-btn mt-20 col-12"><button class="th-btn btn-fw th-radius2">Sign up</button>

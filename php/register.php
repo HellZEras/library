@@ -12,22 +12,22 @@ try {
         $lastName = trim($_POST['lastname']);
         $email = trim($_POST['new_email']);
         $confirmEmail = trim($_POST['new_email_confirm']);
-        $password = trim($_POST['passwordf']);
+        $password = trim($_POST['password']);
 
         if ($email !== $confirmEmail) {
             $error = "Emails do not match.";
             echo $error;
-            // sleep(2);
-            // header("Location: /libary/index_kids.php");
-            // exit();
+            sleep(2);
+            header("Location: /libary/index.php");
+            exit();
         }
 
         if (strlen($password) < 6) {
             $error = "Password must be at least 6 characters.";
             echo $error;
-            // sleep(2);
-            // header("Location: /libary/index_kids.php");
-            // exit();
+            sleep(2);
+            header("Location: /libary/index.php");
+            exit();
         }
 
         $stmt = $pdo->prepare("SELECT COUNT(*) FROM users WHERE username = :username OR email = :email");
@@ -37,9 +37,9 @@ try {
         if ($exists > 0) {
             $error = "Username or email already exists.";
             echo $error;
-            // sleep(2);
-            // header("Location: /libary/index_kids.php");
-            // exit();
+            sleep(2);
+            header("Location: /libary/index.php");
+            exit();
         }
 
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
@@ -58,13 +58,13 @@ try {
         $_SESSION['first_name'] = $firstName;
         echo "Registration successful!";
         sleep(2);
-        header("Location: /libary/index_kids.php");
+        header("Location: /libary/index.php");
         exit();
     }
 } catch (PDOException $e) {
     $error = "Database connection failed: " . $e->getMessage();
     echo $error;
-    // sleep(2);
-    // header("Location: /libary/index_kids.php");
-    // exit();
+    sleep(2);
+    header("Location: /libary/index.php");
+    exit();
 }
