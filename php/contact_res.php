@@ -1,73 +1,62 @@
 <?php
 require('helpers.php');
-session_start();
+function displayBookDetails($book_id) {
+    try {
+        // Initialize PDO connection
+        $pdo = initConn();
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-try {
-    $pdo = initConn();
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try {
+            // Prepare and execute the SQL query
+            $stmt = $pdo->prepare("SELECT id, name, image, price, stock FROM books WHERE id = :id");
+            $stmt->execute(['id' => $book_id]);
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $first_name = trim($_POST['first_name']);
-        $last_name = trim($_POST['last_name']);
-        $email = trim($_POST['email']);
-        $confirm_email = trim($_POST['email1']);
-        $date1 = trim($_POST['date1']);
-        $date2 = trim($_POST['date2']);
-        $sex = trim($_POST['sex']);
-        $message = trim($_POST['message']);
-
-        if (
-            empty($first_name) || empty($last_name) || empty($email) || 
-            empty($confirm_email) || empty($date1) || empty($date2) || empty($sex)
-        ) {
-            $error = "All fields except the message are required.";
-            echo $error;
-            exit();
+            $book = $stmt->fetch(PDO::FETCH_ASSOC);
+            echo $book['price'];
+            // if ($book) {
+            //     // Display the table with book details
+            //     echo '<table class="cart_table mb-20">
+            //             <thead>
+            //                 <tr>
+            //                     <th class="cart-col-image">Image</th>
+            //                     <th class="cart-col-productname">Product Name</th>
+            //                     <th class="cart-col-price">Price</th>
+            //                     <th class="cart-col-quantity">Quantity</th>
+            //                     <th class="cart-col-total">Total</th>
+            //                 </tr>
+            //             </thead>
+            //             <tbody>
+            //                 <tr class="cart_item">
+            //                     <td data-title="Product"><a class="cart-productimage" href="shop-details.php"><img width="91" height="91" src="' . htmlspecialchars($book['image']) . '" alt="Image"></a></td>
+            //                     <td data-title="Name"><a class="cart-productname" href="shop-details.php">' . htmlspecialchars($book['name']) . '</a></td>
+            //                     <td data-title="Price"><span class="amount"><bdi><span>' . htmlspecialchars($book['price']) . ' dt</span></bdi></span></td>
+            //                     <td data-title="Quantity"><strong class="product-quantity">01</strong></td>
+            //                     <td data-title="Total"><span class="amount"><bdi><span>' . htmlspecialchars($book['price']) . ' dt</span></bdi></span></td>
+            //                 </tr>
+            //             </tbody>
+            //             <tfoot class="checkout-ordertable">
+            //                 <tr class="cart-subtotal">
+            //                     <th>Subtotal</th>
+            //                     <td data-title="Subtotal" colspan="4"><span class="woocommerce-Price-amount amount"><bdi><span>' . htmlspecialchars($book['price']) . ' dt</span></bdi></span></td>
+            //                 </tr>
+            //                 <tr class="woocommerce-shipping-totals shipping">
+            //                     <th>Shipping</th>
+            //                     <td data-title="Shipping" colspan="4">Enter your address to view shipping options.</td>
+            //                 </tr>
+            //                 <tr class="order-total">
+            //                     <th>Total</th>
+            //                     <td data-title="Total" colspan="4"><strong><span class="woocommerce-Price-amount amount"><bdi><span>' . htmlspecialchars($book['price']) . ' dt</span></bdi></span></strong></td>
+            //                 </tr>
+            //             </tfoot>
+            //         </table>';
+            // } else {
+            //     echo '<p>No book found with the provided ID.</p>';
+            // }
+        } catch (PDOException $e) {
+            echo '<p class="error-debug">Error fetching book details: ' . htmlspecialchars($e->getMessage()) . '</p>';
         }
-
-        if ($email !== $confirm_email) {
-            $error = "Email and Confirm Email must match.";
-            echo $error;
-            exit();
-        }
-
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $error = "Invalid email format.";
-            echo $error;
-            exit();
-        }
-
-        $stmt = $pdo->prepare("SELECT COUNT(*) FROM bookings WHERE email = :email");
-        $stmt->execute(['email' => $email]);
-        $existingBookings = $stmt->fetchColumn();
-
-        if ($existingBookings > 0) {
-            $error = "You already have an existing booking.";
-            echo $error;
-            exit();
-        }
-
-        $stmt = $pdo->prepare("
-        INSERT INTO bookings (first_name, last_name, email, booking_date, return_date, sex, message) 
-        VALUES (:first_name, :last_name, :email, :date1, :date2, :sex, :message)
-        ");
-        $stmt->execute([
-            'first_name' => $first_name,
-            'last_name' => $last_name,
-            'email' => $email,
-            'date1' => $date1,
-            'date2' => $date2,
-            'sex' => $sex,
-            'message' => $message,
-        ]);
-
-        echo "Booking successfully created!";
-        header("Location: /libary/contact.php");
-        exit();
+    } catch (PDOException $e) {
+        echo '<p class="error-debug">Database connection error: ' . htmlspecialchars($e->getMessage()) . '</p>';
     }
-} catch (PDOException $e) {
-    $error = "Database error: " . $e->getMessage();
-    echo $error;
-    exit();
 }
 ?>

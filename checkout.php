@@ -1,5 +1,6 @@
 <?php
     require_once('php/config.php');
+    require('php/book_details.php');
 ?>
 <!doctype html>
 <html class="no-js" lang="zxx">
@@ -70,21 +71,11 @@
                     <li class="menu-item-has-children"><a href="activities.php">Activities</a>
                     </li>
                     <li class="menu-item-has-children"><a href="#">Pages</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item-has-children"><a href="#">Shop adult</a>
-                                <ul class="sub-menu">
-                                    <li><a href="shop_book.php">Shop</a></li>
-                                    <li><a href="checkout.php">Checkout</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children"><a href="#">Shop kids</a>
-                                <ul class="sub-menu">
-                                    <li><a href="shop_book.php">Shop</a></li>
-                                    <li><a href="checkout.php">Checkout</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="reservation.php">book reservation kids</a></li>
-                            <li><a href="reservation.php">book reservation adult</a></li>
+                        <ul>
+                            <li><a href="activites.php">Activities</a></li>
+                            <li><a href="reservation.php">book reservation</a></li>
+                            <li><a href="donation.php">donation</a></li>
+                            <li><a href="contact.php">Contact us</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children"><a href="donation.php">donation</a>
@@ -131,19 +122,8 @@
                             <nav class="main-menu d-none d-xl-inline-block">
                                 <ul>
                                     <li><a href="activites.php">Activities</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item-has-children"><a href="#">Shop</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="shop_book.php">Shop</a></li>
-                                                    <li><a href="checkout.php">Checkout</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="reservation.php">book reservation</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="donation.php">donation</a>
-                                    </li>
+                                    <li><a href="reservation.php">book reservation</a></li>
+                                    <li><a href="donation.php">donation</a></li>
                                     <li><a href="contact.php">Contact us</a></li>
                                 </ul>
                             </nav><button type="button" class="th-menu-toggle d-block d-xl-none"><i
@@ -226,93 +206,17 @@
                         <input type="text" class="form-control" placeholder="Phone Number" id="billingPhone">
                     </div><br>
                     <div class="form-btn col-12 mt-24">
-                        <button type="button" class="th-btn style3" id="verifyButton">Verification</button>
+                        <button type="button" class="th-btn style3" id="verifyButton" >Verification</button>
                     </div>
                 </div>
             </form>
             <h4 class="mt-4 pt-lg-2">Your Order</h4>
             <form action="#" class="woocommerce-cart-form">
-                <table class="cart_table mb-20">
-                    <thead>
-                        <tr>
-                            <th class="cart-col-image">Image</th>
-                            <th class="cart-col-productname">Product Name</th>
-                            <th class="cart-col-price">Price</th>
-                            <th class="cart-col-quantity">Quantity</th>
-                            <th class="cart-col-total">Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="cart_item">
-                            <td data-title="Product"><a class="cart-productimage" href="shop-details.php"><img
-                                        width="91" height="91" src="assets/images/Jacket.jpeg" alt="Image"></a>
-                            </td>
-                            <td data-title="Name"><a class="cart-productname" href="shop-details.php">never whistle at
-                                    night</a></td>
-                            <td data-title="Price"><span class="amount"><bdi><span>18</span>dt</bdi></span></td>
-                            <td data-title="Quantity"><strong class="product-quantity">01</strong></td>
-                            <td data-title="Total"><span class="amount"><bdi><span>18</span>dt</bdi></span></td>
-                        </tr>
-                    </tbody>
-                    <tfoot class="checkout-ordertable">
-                        <tr class="cart-subtotal">
-                            <th>Subtotal</th>
-                            <td data-title="Subtotal" colspan="4"><span
-                                    class="woocommerce-Price-amount amount"><bdi><span
-                                            class="woocommerce-Price-currencySymbol">18</span>dt</bdi></span></td>
-                        </tr>
-                        <tr class="woocommerce-shipping-totals shipping">
-                            <th>Shipping</th>
-                            <td data-title="Shipping" colspan="4">Enter your address to view shipping options.</td>
-                        </tr>
-                        <tr class="order-total">
-                            <th>Total</th>
-                            <td data-title="Total" colspan="4"><strong><span
-                                        class="woocommerce-Price-amount amount"><bdi><span
-                                                class="woocommerce-Price-currencySymbol">18</span>dt</bdi></span></strong>
-                            </td>
-                        </tr>
-                    </tfoot>
-                </table>
+                <?php displayBookDetails()  ?>
             </form>
             <div class="mt-lg-3 mb-30">
-                <div class="woocommerce-checkout-payment">
-                    <ul class="wc_payment_methods payment_methods methods">
-                        <li class="wc_payment_method payment_method_bacs"><input id="payment_method_bacs" type="radio"
-                                class="input-radio" name="payment_method" value="bacs" checked="checked"> <label
-                                for="payment_method_bacs">Direct bank transfer</label>
-                            <div class="payment_box payment_method_bacs">
-                                <p>Make your payment directly into our bank account. Please use your Order ID as the
-                                    payment reference. Your order will not be shipped until the funds have cleared in
-                                    our account.</p>
-                            </div>
-                        </li>
-                        <li class="wc_payment_method payment_method_cheque"><input id="payment_method_cheque"
-                                type="radio" class="input-radio" name="payment_method" value="cheque"> <label
-                                for="payment_method_cheque">Cheque Payment</label>
-                            <div class="payment_box payment_method_cheque">
-                                <p>Please send a check to Store Name, Store Street, Store Town, Store State / County,
-                                    Store Postcode.</p>
-                            </div>
-                        </li>
-                        <li class="wc_payment_method payment_method_cod"><input id="payment_method_cod" type="radio"
-                                class="input-radio" name="payment_method"> <label for="payment_method_cod">Credit
-                                Cart</label>
-                            <div class="payment_box payment_method_cod">
-                                <p>Pay with cash upon delivery.</p>
-                            </div>
-                        </li>
-                        <li class="wc_payment_method payment_method_paypal"><input id="payment_method_paypal"
-                                type="radio" class="input-radio" name="payment_method" value="paypal"> <label
-                                for="payment_method_paypal">Paypal</label>
-                            <div class="payment_box payment_method_paypal">
-                                <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="form-row place-order"><button type="submit" class="th-btn">Place order</button></div>
-                </div>
+                <div class="form-row place-order"><button type="submit" class="th-btn" onclick=handleBillingFormSubmit(event)>Place order</button></div>
+                <div class="error-message" style="display: none;"></div>
             </div>
         </div>
     </div>
@@ -414,17 +318,22 @@
         </ul>
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="error-message" style="color: red; display: none;"></div>
                 <h3 class="box-title mb-30">Sign in to your account</h3>
                 <div class="th-login-form">
-                    <form action="/libary/php/login.php" method="POST"
-                        class="login-form">
+                    <form action="" method="POST" class="login-form">
                         <div class="row">
-                            <div class="form-group col-12"><label>Username or email</label> <input type="text"
-                                    class="form-control" name="email" id="email" required="required"></div>
-                            <div class="form-group col-12"><label>Password</label> <input type="password"
-                                    class="form-control" name="pasword" id="pasword" required="required"></div>
-                            <div class="form-btn mb-20 col-12"><button class="th-btn btn-fw th-radius2">Send
-                                    Message</button></div>
+                            <div class="form-group col-12">
+                                <label>Username or email</label>
+                                <input type="text" class="form-control" name="email" id="email" required="required">
+                            </div>
+                            <div class="form-group col-12">
+                                <label>Password</label>
+                                <input type="password" class="form-control" name="pasword" id="pasword" required="required">
+                            </div>
+                            <div class="form-btn mb-20 col-12">
+                                <button type="button" class="th-btn btn-fw th-radius2" onclick="handleLoginClick(event)">Login</button>
+                            </div>
                         </div>
                         <div id="forgot_url"><a href="my-account.php">Forgot password?</a></div>
                         <p class="form-messages mb-0 mt-3"></p>
@@ -433,8 +342,9 @@
             </div>
             <div class="tab-pane fade active show" id="pills-profile" role="tabpanel"
                 aria-labelledby="pills-profile-tab">
-                <h3 class="th-form-title mb-30">Sign in to your account</h3>
-                <form action="/libary/php/register.php" method="POST" class="login-form">
+                <div class="error-message" style="color: red; display: none;"></div>
+                <h3 class="th-form-title mb-30">Sign up to your account</h3>
+                <form action="" method="POST" class="login-form">
                     <div class="row">
                         <div class="form-group col-12"><label>Username*</label> <input type="text" class="form-control"
                                 name="username" id="username" required="required"></div>
@@ -451,7 +361,7 @@
                         type="password" class="form-control" name="password" id="pass"
                         required="required"></div>
 
-                        <div class="form-btn mt-20 col-12"><button class="th-btn btn-fw th-radius2">Sign up</button>
+                        <div class="form-btn mt-20 col-12"><button class="th-btn btn-fw th-radius2" onclick=handleRegistrationSubmit(event)>Sign up</button>
                         </div>
                     </div>
                     <p class="form-messages mb-0 mt-3"></p>
@@ -473,6 +383,7 @@
     <script src="assets/js/matterjs-custom.js"></script>
     <script src="assets/js/nice-select.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/forms.js"></script>
 </body>
 
 </html>

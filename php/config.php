@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$timeout = 30;
+$timeout = 60;
 ini_set('session.gc_maxlifetime', $timeout);
 ini_set('session.cookie_lifetime', $timeout);
 

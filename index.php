@@ -55,22 +55,11 @@
                     <li class="menu-item-has-children"><a href="activites.php">Activities</a>
                     </li>
                     <li class="menu-item-has-children"><a href="#">Pages</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item-has-children"><a href="#">Shop adult</a>
-                                <ul class="sub-menu">
-                                    <li><a href="shop_book.php">Shop</a></li>
-                                    <li><a href="shop-details">Shop Details</a></li>
-                                    <li><a href="checkout.php">Checkout</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children"><a href="#">Shop kids</a>
-                                <ul class="sub-menu">
-                                    <li><a href="shop_book.php">Shop</a></li>
-                                    <li><a href="checkout.php">Checkout</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="reservation.php">book reservation kids</a></li>
-                            <li><a href="reservation.php">book reservation adult</a></li>
+                        <ul>
+                            <li><a href="activites.php">Activities</a></li>
+                            <li><a href="reservation.php">book reservation</a></li>
+                            <li><a href="donation.php">donation</a></li>
+                            <li><a href="contact.php">Contact us</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children"><a href="blog.php">Blog</a>
@@ -126,19 +115,8 @@
                             <nav class="main-menu d-none d-xl-inline-block">
                                 <ul>
                                     <li><a href="activites.php">Activities</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item-has-children"><a href="#">Shop</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="shop_book.php">Shop</a></li>
-                                                    <li><a href="checkout.php">Checkout</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="reservation.php">book reservation</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="donation.php">donation</a>
-                                    </li>
+                                    <li><a href="reservation.php">book reservation</a></li>
+                                    <li><a href="donation.php">donation</a></li>
                                     <li><a href="contact.php">Contact us</a></li>
                                 </ul>
                             </nav><button type="button" class="th-menu-toggle d-block d-xl-none"><i
@@ -1165,17 +1143,22 @@
         </ul>
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="error-message" style="color: red; display: none;"></div>
                 <h3 class="box-title mb-30">Sign in to your account</h3>
                 <div class="th-login-form">
-                    <form action="/libary/php/login.php" method="POST"
-                        class="login-form">
+                    <form action="" method="POST" class="login-form">
                         <div class="row">
-                            <div class="form-group col-12"><label>Username or email</label> <input type="text"
-                                    class="form-control" name="email" id="email" required="required"></div>
-                            <div class="form-group col-12"><label>Password</label> <input type="password"
-                                    class="form-control" name="pasword" id="pasword" required="required"></div>
-                            <div class="form-btn mb-20 col-12"><button class="th-btn btn-fw th-radius2">Send
-                                    Message</button></div>
+                            <div class="form-group col-12">
+                                <label>Username or email</label>
+                                <input type="text" class="form-control" name="email" id="email" required="required">
+                            </div>
+                            <div class="form-group col-12">
+                                <label>Password</label>
+                                <input type="password" class="form-control" name="pasword" id="pasword" required="required">
+                            </div>
+                            <div class="form-btn mb-20 col-12">
+                                <button type="button" class="th-btn btn-fw th-radius2" onclick="handleLoginClick(event)">Login</button>
+                            </div>
                         </div>
                         <div id="forgot_url"><a href="my-account.php">Forgot password?</a></div>
                         <p class="form-messages mb-0 mt-3"></p>
@@ -1184,8 +1167,9 @@
             </div>
             <div class="tab-pane fade active show" id="pills-profile" role="tabpanel"
                 aria-labelledby="pills-profile-tab">
-                <h3 class="th-form-title mb-30">Sign in to your account</h3>
-                <form action="/libary/php/register.php" method="POST" class="login-form">
+                <div class="error-message" style="color: red; display: none;"></div>
+                <h3 class="th-form-title mb-30">Sign up to your account</h3>
+                <form action="" method="POST" class="login-form">
                     <div class="row">
                         <div class="form-group col-12"><label>Username*</label> <input type="text" class="form-control"
                                 name="username" id="username" required="required"></div>
@@ -1202,7 +1186,7 @@
                         type="password" class="form-control" name="password" id="pass"
                         required="required"></div>
 
-                        <div class="form-btn mt-20 col-12"><button class="th-btn btn-fw th-radius2">Sign up</button>
+                        <div class="form-btn mt-20 col-12"><button class="th-btn btn-fw th-radius2" onclick=handleRegistrationSubmit(event)>Sign up</button>
                         </div>
                     </div>
                     <p class="form-messages mb-0 mt-3"></p>
@@ -1227,6 +1211,7 @@
     <script src="assets/js/matterjs-custom.js"></script>
     <script src="assets/js/nice-select.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/forms.js" defer></script>
 </body>
 
 

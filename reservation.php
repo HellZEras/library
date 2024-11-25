@@ -1,5 +1,6 @@
 <?php
     require_once('php/config.php');
+    require('php/helpers.php');
 ?>
 <!doctype html>
 <html class="no-js" lang="zxx">
@@ -57,21 +58,11 @@
                     <li class="menu-item-has-children"><a href="activities.php">Activities</a>
                     </li>
                     <li class="menu-item-has-children"><a href="#">Pages</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item-has-children"><a href="#">Shop adult</a>
-                                <ul class="sub-menu">
-                                    <li><a href="shop_book.php">Shop</a></li>
-                                    <li><a href="checkout.php">Checkout</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children"><a href="#">Shop kids</a>
-                                <ul class="sub-menu">
-                                    <li><a href="shop_book.php">Shop</a></li>
-                                    <li><a href="checkout.php">Checkout</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="reservation.php">book reservation kids</a></li>
-                            <li><a href="reservation.php">book reservation adult</a></li>
+                        <ul>
+                            <li><a href="activites.php">Activities</a></li>
+                            <li><a href="reservation.php">book reservation</a></li>
+                            <li><a href="donation.php">donation</a></li>
+                            <li><a href="contact.php">Contact us</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children"><a href="donation.php">donation</a>
@@ -118,19 +109,8 @@
                             <nav class="main-menu d-none d-xl-inline-block">
                                 <ul>
                                     <li><a href="activites.php">Activities</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item-has-children"><a href="#">Shop</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="shop_book.php">Shop</a></li>
-                                                    <li><a href="checkout.php">Checkout</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="reservation.php">book reservation</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="donation.php">donation</a>
-                                    </li>
+                                    <li><a href="reservation.php">book reservation</a></li>
+                                    <li><a href="donation.php">donation</a></li>
                                     <li><a href="contact.php">Contact us</a></li>
                                 </ul>
                             </nav><button type="button" class="th-menu-toggle d-block d-xl-none"><i
@@ -163,316 +143,7 @@
                 <h2 class="sec-title">Our Amazing collection</h2>
             </div>
             <div class="row gy-4 gx-4">
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (1).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">buffalo dreamer</a></h3>
-                            <p class="destination-text">20 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (17).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">but not buddy</a></h3>
-                            <p class="destination-text">22 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (21).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">anderson</a></h3>
-                            <p class="destination-text">23 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (13).jpeg"
-                                alt="image">
-                        </div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">dog flowers
-                                </a></h3>
-                            <p class="destination-text">24 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (2).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php"></a>the truth according to ember</h3>
-                            <p class="destination-text">5 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (18).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">stamped</a></h3>
-                            <p class="destination-text">26 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (4).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">winter counts</a>probably roby</h3>
-                            <p class="destination-text">27 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket.jpeg" alt="image">
-                        </div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">never whistyle at night</a></h3>
-                            <p class="destination-text">28 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (63).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">A to Z mysteries</a></h3>
-                            <p class="destination-text">20 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (62).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">wedding</a></h3>
-                            <p class="destination-text">48 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket1.jpeg" alt="image">
-                        </div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">octavian nothing</a></h3>
-                            <p class="destination-text">11 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (48).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">misfits</a></h3>
-                            <p class="destination-text">28 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (36).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">closing team</a></h3>
-                            <p class="destination-text">28 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (57).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">the screw</a></h3>
-                            <p class="destination-text">28 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (41).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">tale dark</a></h3>
-                            <p class="destination-text">28 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (61).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">secret voice</a></h3>
-                            <p class="destination-text">28 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (7).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">exit</a></h3>
-                            <p class="destination-text">28 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (11).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">to share dragon</a></h3>
-                            <p class="destination-text">28 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (50).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">the tapper twins</a></h3>
-                            <p class="destination-text">5 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (38).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">roth chosen ones</a></h3>
-                            <p class="destination-text">13 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (42).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">roald dahl</a></h3>
-                            <p class="destination-text">13 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (44).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">the god of the woods</a></h3>
-                            <p class="destination-text">13 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (46).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">winter born home</a></h3>
-                            <p class="destination-text">13 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (39).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">the wild robot</a></h3>
-                            <p class="destination-text">13 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (12).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">maria tallcheif</a></h3>
-                            <p class="destination-text">13 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (20).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">anderson</a></h3>
-                            <p class="destination-text">13 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (26).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">kritan hannah</a></h3>
-                            <p class="destination-text">13 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img"><img src="assets/images/Jacket (23).jpeg"
-                                alt="image"></div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.php">moon over manifest</a></h3>
-                            <p class="destination-text">13 reader</p><a href="contact_res.php"
-                                class="th-btn style4 th-icon">Book now</a>
-                        </div>
-                    </div>
-                </div>
+                <?php displayBooks() ?>
             </div>
         </div>
     </section>
@@ -579,17 +250,22 @@
         </ul>
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="error-message" style="color: red; display: none;"></div>
                 <h3 class="box-title mb-30">Sign in to your account</h3>
                 <div class="th-login-form">
-                    <form action="/libary/php/login.php" method="POST"
-                        class="login-form">
+                    <form action="" method="POST" class="login-form">
                         <div class="row">
-                            <div class="form-group col-12"><label>Username or email</label> <input type="text"
-                                    class="form-control" name="email" id="email" required="required"></div>
-                            <div class="form-group col-12"><label>Password</label> <input type="password"
-                                    class="form-control" name="pasword" id="pasword" required="required"></div>
-                            <div class="form-btn mb-20 col-12"><button class="th-btn btn-fw th-radius2">Send
-                                    Message</button></div>
+                            <div class="form-group col-12">
+                                <label>Username or email</label>
+                                <input type="text" class="form-control" name="email" id="email" required="required">
+                            </div>
+                            <div class="form-group col-12">
+                                <label>Password</label>
+                                <input type="password" class="form-control" name="pasword" id="pasword" required="required">
+                            </div>
+                            <div class="form-btn mb-20 col-12">
+                                <button type="button" class="th-btn btn-fw th-radius2" onclick="handleLoginClick(event)">Login</button>
+                            </div>
                         </div>
                         <div id="forgot_url"><a href="my-account.php">Forgot password?</a></div>
                         <p class="form-messages mb-0 mt-3"></p>
@@ -598,8 +274,9 @@
             </div>
             <div class="tab-pane fade active show" id="pills-profile" role="tabpanel"
                 aria-labelledby="pills-profile-tab">
-                <h3 class="th-form-title mb-30">Sign in to your account</h3>
-                <form action="/libary/php/register.php" method="POST" class="login-form">
+                <div class="error-message" style="color: red; display: none;"></div>
+                <h3 class="th-form-title mb-30">Sign up to your account</h3>
+                <form action="" method="POST" class="login-form">
                     <div class="row">
                         <div class="form-group col-12"><label>Username*</label> <input type="text" class="form-control"
                                 name="username" id="username" required="required"></div>
@@ -616,7 +293,7 @@
                         type="password" class="form-control" name="password" id="pass"
                         required="required"></div>
 
-                        <div class="form-btn mt-20 col-12"><button class="th-btn btn-fw th-radius2">Sign up</button>
+                        <div class="form-btn mt-20 col-12"><button class="th-btn btn-fw th-radius2" onclick=handleRegistrationSubmit(event)>Sign up</button>
                         </div>
                     </div>
                     <p class="form-messages mb-0 mt-3"></p>
@@ -638,6 +315,7 @@
     <script src="assets/js/matterjs-custom.js"></script>
     <script src="assets/js/nice-select.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/forms.js"></script>
 </body>
 <!-- Mirrored from html.themeholy.com/tourm/demo/about.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Oct 2024 04:01:32 GMT -->
 
