@@ -217,6 +217,7 @@ function validateEmail(email) {
 function handleBillingFormSubmit(event) {
     event.preventDefault();
 
+    // Get form data
     const region = document.getElementById('region').value;
     const firstName = document.getElementById('billingFirstName').value;
     const lastName = document.getElementById('billingLastName').value;
@@ -229,23 +230,23 @@ function handleBillingFormSubmit(event) {
     const phoneNumber = document.getElementById('billingPhone').value;
 
     if (!/^\d+$/.test(phoneNumber)) {
-        const messageBox = document.querySelector('.error-message');
-        messageBox.style.display = 'block';
-        messageBox.textContent = 'Phone number must be numeric.';
+        showError('Phone number must be numeric.');
         return;
     }
 
     if (!/^\d+$/.test(cardNumber)) {
-        const messageBox = document.querySelector('.error-message');
-        messageBox.style.display = 'block';
-        messageBox.textContent = 'Credit card number must be numeric.';
+        showError('Credit card number must be numeric.');
         return;
     }
 
     if (!/^\d+$/.test(cin)) {
-        const messageBox = document.querySelector('.error-message');
-        messageBox.style.display = 'block';
-        messageBox.textContent = 'CIN must be numeric.';
+        showError('CIN must be numeric.');
+        return;
+    }
+
+    const bookId = new URLSearchParams(window.location.search).get('book_id');
+    if (!bookId) {
+        showError('Book ID is missing in the URL.');
         return;
     }
 
@@ -260,6 +261,7 @@ function handleBillingFormSubmit(event) {
     data.append('country', country);
     data.append('zip', postcode);
     data.append('num', phoneNumber);
+    data.append('book_id', bookId);
 
     fetch('php/billing.php', {
         method: 'POST',
@@ -270,20 +272,27 @@ function handleBillingFormSubmit(event) {
         .then(data => {
             const messageBox = document.querySelector('.error-message');
             if (data.status === 'error') {
-                messageBox.style.display = 'block';
-                messageBox.textContent = data.message;
-                messageBox.style.color = 'red';
+                showError(data.message);
             } else if (data.status === 'success') {
-                messageBox.style.display = 'block';
-                messageBox.textContent = 'Billing details submitted successfully!';
-                messageBox.style.color = 'green';
+                showSuccess('Billing details submitted successfully!');
             }
         })
         .catch(error => {
             console.error('Error:', error);
-            const messageBox = document.querySelector('.error-message');
-            messageBox.style.display = 'block';
-            messageBox.textContent = 'An unexpected error occurred. Please try again.';
-            messageBox.style.color = 'red';
+            showError('An unexpected error occurred. Please try again.');
         });
+}
+
+function showError(message) {
+    const messageBox = document.querySelector('.error-message');
+    messageBox.style.display = 'block';
+    messageBox.textContent = message;
+    messageBox.style.color = 'red';
+}
+
+function showSuccess(message) {
+    const messageBox = document.querySelector('.error-message');
+    messageBox.style.display = 'block';
+    messageBox.textContent = message;
+    messageBox.style.color = 'green';
 }

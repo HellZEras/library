@@ -603,9 +603,6 @@
                                             href="tour-details.php" class="woocommerce-review-link">(<span
                                                 class="count">4.8</span> Rating)</a>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">43.00 dt</span>/Person</h4>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>7 Days</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -622,9 +619,6 @@
                                             href="tour-details.php" class="woocommerce-review-link">(<span
                                                 class="count">4.8</span> Rating)</a>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">39.00 dt</span>/Person</h4>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>7 Days</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -641,9 +635,6 @@
                                             href="tour-details.php" class="woocommerce-review-link">(<span
                                                 class="count">4.8</span> Rating)</a>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">40.00 dt</span>/Person</h4>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>7 Days</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -660,9 +651,6 @@
                                             href="tour-details.php" class="woocommerce-review-link">(<span
                                                 class="count">4.8</span> Rating)</a>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">60.00 dt</span>/Person</h4>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>7 Days</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -679,9 +667,6 @@
                                             href="tour-details.php" class="woocommerce-review-link">(<span
                                                 class="count">4.8</span> Rating)</a>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">25.00 dt</span>/Person</h4>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>7 Days</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -698,9 +683,6 @@
                                             href="tour-details.php" class="woocommerce-review-link">(<span
                                                 class="count">4.8</span> Rating)</a>
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">30 dt</span>/Person</h4>
-                                    <div class="tour-action"><span><i class="fa-light fa-clock"></i>7 Days</span> <a
-                                            href="contact.php" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>

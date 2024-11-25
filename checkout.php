@@ -151,20 +151,6 @@
     </div>
     <div class="th-checkout-wrapper space-top space-extra-bottom">
         <div class="container">
-
-            <div class="woocommerce-form-coupon-toggle">
-                <div class="woocommerce-info">Have a coupon? <a href="#" class="showcoupon">Click here to enter your
-                        code</a></div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <form action="#" class="woocommerce-form-coupon">
-                        <div class="form-group"><label>Coupon code</label> <input type="text" class="form-control"
-                                placeholder="Write your coupon code"></div>
-                        <div class="form-group"><button type="submit" class="th-btn">Apply coupon</button></div>
-                    </form>
-                </div>
-            </div>
             <form action="#" class="woocommerce-checkout mt-40" id="billingForm">
                 <h2 class="h4">Billing Details</h2>
                 <div class="row">
@@ -205,9 +191,6 @@
                     <div class="col-12 form-group">
                         <input type="text" class="form-control" placeholder="Phone Number" id="billingPhone">
                     </div><br>
-                    <div class="form-btn col-12 mt-24">
-                        <button type="button" class="th-btn style3" id="verifyButton" >Verification</button>
-                    </div>
                 </div>
             </form>
             <h4 class="mt-4 pt-lg-2">Your Order</h4>
