@@ -9,11 +9,12 @@ try {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Content-Type: application/json');
     
-        $email = trim($_POST['email']);
+        $emailOrUsername = trim($_POST['email']); // Assuming 'email' is used for both email and username
         $password = trim($_POST['pasword']);
     
-        $stmt = $pdo->prepare("SELECT id, username, first_name, password FROM users WHERE email = :email");
-        $stmt->execute(['email' => $email]);
+        // Query to check if the input matches either the email or username
+        $stmt = $pdo->prepare("SELECT id, username, first_name, email, password FROM users WHERE email = :emailOrUsername OR username = :emailOrUsername");
+        $stmt->execute(['emailOrUsername' => $emailOrUsername]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
         if ($user && password_verify($password, $user['password'])) {
@@ -23,7 +24,7 @@ try {
     
             echo json_encode(['status' => 'success', 'message' => 'Login successful']);
         } else {
-            echo json_encode(['status' => 'error', 'message' => 'Invalid email or password']);
+            echo json_encode(['status' => 'error', 'message' => 'Invalid email/username or password']);
         }
         exit();
     }

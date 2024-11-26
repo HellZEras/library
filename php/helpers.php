@@ -144,6 +144,7 @@
                 echo '<div class="col-md-12">';
                 if (count($bookings) > 0) {
                     echo '<h5>Bookings:</h5>';
+                    echo '<div class="error-message" style="color: red; display: none;"></div>';
                     echo '<table class="table table-bordered">';
                     echo '<thead><tr><th>Book Name</th><th>Booking Date</th><th>Return Date</th><th>Action</th></tr></thead>';
                     echo '<tbody>';

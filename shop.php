@@ -84,7 +84,12 @@
                             <div class="header-links">
                                 <ul>
                                     <?php if (isset($_SESSION['username'])): ?>
-                                        <li>Hello, <?php echo htmlspecialchars($_SESSION['username']); ?>!</li>
+                                        <li>
+                                            Hello, 
+                                            <a href="profile.php?username=<?php echo urlencode($_SESSION['username']); ?>" style="color: cyan; text-decoration: underline;">
+                                                <?php echo htmlspecialchars($_SESSION['username']); ?>
+                                            </a>!
+                                        </li>
                                         <a href="/libary/php/logout.php">Logout</a>
                                     <?php else: ?>
                                         <li class="d-none d-md-inline-block"><a href="faq.php">FAQ</a></li>
@@ -119,7 +124,7 @@
                                     class="far fa-bars"></i></button>
                         </div>
                         <div class="col-auto d-none d-xl-block">
-                            <div class="header-button"><a href="contact.php" class="th-btn style3 th-icon">Book Now</a>
+                            <div class="header-button"><a href="reservation.php" class="th-btn style3 th-icon">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -319,6 +324,5 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/forms.js"></script>
 </body>
-<!-- Mirrored from html.themeholy.com/tourm/demo/about.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Oct 2024 04:01:32 GMT -->
 
 </html>

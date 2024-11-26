@@ -3,12 +3,10 @@ require('helpers.php');
 session_start();
 
 try {
-    // Initialize database connection
     $pdo = initConn();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Retrieve form data
         $firstName = trim($_POST['first_name']);
         $lastName = trim($_POST['last_name']);
         $email = trim($_POST['email']);
@@ -20,7 +18,6 @@ try {
         $bookId = isset($_POST['book_id']) ? (int)$_POST['book_id'] : null;
         $username = isset($_SESSION['username']) ? $_SESSION['username'] : null;
 
-        // Validate inputs
         if (empty($firstName) || empty($lastName) || empty($email) || empty($confirmEmail) || empty($date1) || empty($date2) || empty($sex)) {
             $error = "All fields except the message are required.";
             echo json_encode(['status' => 'error', 'message' => $error]);
@@ -39,7 +36,6 @@ try {
             exit();
         }
 
-        // Check if date2 is greater than date1
         $dateObj1 = new DateTime($date1);
         $dateObj2 = new DateTime($date2);
 
@@ -49,14 +45,30 @@ try {
             exit();
         }
 
-        // Check if username exists in the session
         if (!$username) {
             $error = "User is not logged in.";
             echo json_encode(['status' => 'error', 'message' => $error]);
             exit();
         }
 
-        // Prepare SQL query to insert data into bookings table
+        // Check if stock is sufficient
+        if ($bookId) {
+            $stockStmt = $pdo->prepare("SELECT stock FROM books WHERE id = :book_id");
+            $stockStmt->execute(['book_id' => $bookId]);
+            $book = $stockStmt->fetch(PDO::FETCH_ASSOC);
+
+            if (!$book) {
+                echo json_encode(['status' => 'error', 'message' => 'Book not found.']);
+                exit();
+            }
+
+            if ($book['stock'] <= 0) {
+                echo json_encode(['status' => 'error', 'message' => 'Book is out of stock.']);
+                exit();
+            }
+        }
+
+        // Insert booking into bookings table
         $stmt = $pdo->prepare("INSERT INTO bookings (first_name, last_name, email, booking_date, return_date, sex, message, book_id, username) 
                                 VALUES (:first_name, :last_name, :email, :booking_date, :return_date, :sex, :message, :book_id, :username)");
 
@@ -71,6 +83,12 @@ try {
             'book_id' => $bookId,
             'username' => $username,
         ]);
+
+        // Deduct 1 from the stock
+        if ($bookId) {
+            $updateStockStmt = $pdo->prepare("UPDATE books SET stock = stock - 1 WHERE id = :book_id");
+            $updateStockStmt->execute(['book_id' => $bookId]);
+        }
 
         echo json_encode(['status' => 'success', 'message' => 'Your booking has been submitted successfully!']);
         exit();

@@ -89,19 +89,19 @@
                 <div class="header-right">
                     <div class="header-links">
                         <ul>
-                        <?php if (isset($_SESSION['username'])): ?>
-                            <li>
-                                Hello, 
-                                <a href="profile.php?username=<?php echo urlencode($_SESSION['username']); ?>">
-                                    <?php echo htmlspecialchars($_SESSION['username']); ?>
-                                </a>!
-                            </li>
-                            <a href="/libary/php/logout.php">Logout</a>
-                        <?php else: ?>
-                            <li class="d-none d-md-inline-block"><a href="faq.php">FAQ</a></li>
-                            <li class="d-none d-md-inline-block"><a href="contact.php">Support</a></li>
-                            <li><a href="#login-form" class="popup-content">Sign In / Register<i class="fa-regular fa-user"></i></a></li>
-                        <?php endif; ?>
+                            <?php if (isset($_SESSION['username'])): ?>
+                                <li>
+                                    Hello, 
+                                    <a href="profile.php?username=<?php echo urlencode($_SESSION['username']); ?>" style="color: cyan; text-decoration: underline;">
+                                        <?php echo htmlspecialchars($_SESSION['username']); ?>
+                                    </a>!
+                                </li>
+                                <a href="/libary/php/logout.php">Logout</a>
+                            <?php else: ?>
+                                <li class="d-none d-md-inline-block"><a href="faq.php">FAQ</a></li>
+                                <li class="d-none d-md-inline-block"><a href="contact.php">Support</a></li>
+                                <li><a href="#login-form" class="popup-content">Sign In / Register<i class="fa-regular fa-user"></i></a></li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                                     class="far fa-bars"></i></button>
                         </div>
                         <div class="col-auto d-none d-xl-block">
-                            <div class="header-button"><a href="contact.php" class="th-btn style3 th-icon">Book Now</a>
+                            <div class="header-button"><a href="reservation.php" class="th-btn style3 th-icon">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -259,7 +259,7 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="category-card single">
-                            <div class="box-img global-img"><img src="assets/images/Jacket (1).jpeg" alt="Image">
+                            <div class="box-img global-img"><img src="assets/images/books/adventures_of_tom.jpeg" alt="Image">
                             </div>
                             <h3 class="box-title"><a href="destination.php">Cruises</a></h3><a class="line-btn"
                                 href="destination.php">See more</a>
@@ -267,7 +267,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="category-card single">
-                            <div class="box-img global-img"><img src="assets/images/Jacket (10).jpeg" alt="Image">
+                            <div class="box-img global-img"><img src="assets/images/books/and_then_she_fell.jpeg" alt="Image">
                             </div>
                             <h3 class="box-title"><a href="destination.php">Hiking</a></h3><a class="line-btn"
                                 href="destination.php">See more</a>
@@ -275,7 +275,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="category-card single">
-                            <div class="box-img global-img"><img src="assets/images/Jacket (11).jpeg" alt="Image">
+                            <div class="box-img global-img"><img src="assets/images/books/ashes.jpeg" alt="Image">
                             </div>
                             <h3 class="box-title"><a href="destination.php">Airbirds</a></h3><a class="line-btn"
                                 href="destination.php">See more</a>
@@ -283,7 +283,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="category-card single">
-                            <div class="box-img global-img"><img src="assets/images/Jacket (12).jpeg" alt="Image">
+                            <div class="box-img global-img"><img src="assets/images/books/bad_cree.jpeg" alt="Image">
                             </div>
                             <h3 class="box-title"><a href="destination.php">Wildlife</a></h3><a class="line-btn"
                                 href="destination.php">See more</a>
@@ -291,7 +291,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="category-card single">
-                            <div class="box-img global-img"><img src="assets/images/Jacket (13).jpeg" alt="Image">
+                            <div class="box-img global-img"><img src="assets/images/books/blood_sisters.jpeg" alt="Image">
                             </div>
                             <h3 class="box-title"><a href="destination.php">Walking</a></h3><a class="line-btn"
                                 href="destination.php">See more</a>
@@ -299,7 +299,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="category-card single">
-                            <div class="box-img global-img"><img src="assets/images/Jacket (14).jpeg" alt="Image">
+                            <div class="box-img global-img"><img src="assets/images/books/bud_not_buddy.jpeg" alt="Image">
                             </div>
                             <h3 class="box-title"><a href="destination.php">Cruises</a></h3><a class="line-btn"
                                 href="destination.php">See more</a>
@@ -307,7 +307,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="category-card single">
-                            <div class="box-img global-img"><img src="assets/images/Jacket (2).jpeg" alt="Image">
+                            <div class="box-img global-img"><img src="assets/images/books/buffalo_dreamer.jpeg" alt="Image">
                             </div>
                             <h3 class="box-title"><a href="destination.php">Wildlife</a></h3><a class="line-btn"
                                 href="destination.php">See more</a>
@@ -315,7 +315,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="category-card single">
-                            <div class="box-img global-img"><img src="assets/images/Jacket (3).jpeg" alt="Image">
+                            <div class="box-img global-img"><img src="assets/images/books/chains.jpeg" alt="Image">
                             </div>
                             <h3 class="box-title"><a href="destination.php">Walking</a></h3><a class="line-btn"
                                 href="destination.php">See more</a>
@@ -323,7 +323,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="category-card single">
-                            <div class="box-img global-img"><img src="assets/images/Jacket (4).jpeg" alt="Image">
+                            <div class="box-img global-img"><img src="assets/images/books/coup!.jpeg" alt="Image">
                             </div>
                             <h3 class="box-title"><a href="destination.php">Cruises</a></h3><a class="line-btn"
                                 href="destination.php">See more</a>
@@ -331,7 +331,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="category-card single">
-                            <div class="box-img global-img"><img src="assets/images/Jacket (5).jpeg" alt="Image">
+                            <div class="box-img global-img"><img src="assets/images/books/department_q.jpeg" alt="Image">
                             </div>
                             <h3 class="box-title"><a href="destination.php">Hiking</a></h3><a class="line-btn"
                                 href="destination.php">See more</a>
@@ -339,7 +339,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="category-card single">
-                            <div class="box-img global-img"><img src="assets/images/Jacket (6).jpeg" alt="Image">
+                            <div class="box-img global-img"><img src="assets/images/books/indian_burial_ground.jpeg" alt="Image">
                             </div>
                             <h3 class="box-title"><a href="destination.php">Airbirds</a></h3><a class="line-btn"
                                 href="destination.php">See more</a>
@@ -347,7 +347,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="category-card single">
-                            <div class="box-img global-img"><img src="assets/images/Jacket (7).jpeg" alt="Image">
+                            <div class="box-img global-img"><img src="assets/images/books/dog_flowers.jpeg" alt="Image">
                             </div>
                             <h3 class="box-title"><a href="destination.php">Wildlife</a></h3><a class="line-btn"
                                 href="destination.php">See more</a>
@@ -355,7 +355,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="category-card single">
-                            <div class="box-img global-img"><img src="assets/images/Jacket (8).jpeg" alt="Image">
+                            <div class="box-img global-img"><img src="assets/images/books/kristin_kannah.jpeg" alt="Image">
                             </div>
                             <h3 class="box-title"><a href="destination.php">Walking</a></h3><a class="line-btn"
                                 href="destination.php">See more</a>
@@ -376,7 +376,7 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="destination-box gsap-cursor">
-                            <div class="destination-img"><img src="assets/images/Jacket (17).jpeg"
+                            <div class="destination-img"><img src="assets/images/books/little_big_bully.jpeg"
                                     alt="destination image">
                                 <div class="destination-content">
                                     <div class="media-left">
@@ -391,7 +391,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="destination-box gsap-cursor">
-                            <div class="destination-img"><img src="assets/images/Jacket1.jpeg" alt="destination image">
+                            <div class="destination-img"><img src="assets/images/books/moon_over_manifest.jpeg" alt="destination image">
                                 <div class="destination-content">
                                     <div class="media-left">
                                         <h4 class="box-title"><a href="destination-details.php">Thailand</a></h4><span
@@ -405,7 +405,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="destination-box gsap-cursor">
-                            <div class="destination-img"><img src="assets/images/Jacket (23).jpeg"
+                            <div class="destination-img"><img src="assets/images/books/never_whistle_at_night.jpeg"
                                     alt="destination image">
                                 <div class="destination-content">
                                     <div class="media-left">
@@ -420,7 +420,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="destination-box gsap-cursor">
-                            <div class="destination-img"><img src="assets/images/Jacket (22).jpeg"
+                            <div class="destination-img"><img src="assets/images/books/poukahangatus.jpeg"
                                     alt="destination image">
                                 <div class="destination-content">
                                     <div class="media-left">
@@ -435,7 +435,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="destination-box gsap-cursor">
-                            <div class="destination-img"><img src="assets/images/Jacket (18).jpeg"
+                            <div class="destination-img"><img src="assets/images/books/probably_ruby.jpeg"
                                     alt="destination image">
                                 <div class="destination-content">
                                     <div class="media-left">
@@ -450,7 +450,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="destination-box gsap-cursor">
-                            <div class="destination-img"><img src="assets/images/Jacket (20).jpeg"
+                            <div class="destination-img"><img src="assets/images/books/shadow_and_bone.jpeg"
                                     alt="destination image">
                                 <div class="destination-content">
                                     <div class="media-left">
@@ -465,7 +465,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="destination-box gsap-cursor">
-                            <div class="destination-img"><img src="assets/images/Jacket (21).jpeg"
+                            <div class="destination-img"><img src="assets/images/books/she_persisted.jpeg"
                                     alt="destination image">
                                 <div class="destination-content">
                                     <div class="media-left">
@@ -480,7 +480,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="destination-box gsap-cursor">
-                            <div class="destination-img"><img src="assets/images/Jacket (19).jpeg"
+                            <div class="destination-img"><img src="assets/images/books/stamped.jpeg"
                                     alt="destination image">
                                 <div class="destination-content">
                                     <div class="media-left">
@@ -495,7 +495,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="destination-box gsap-cursor">
-                            <div class="destination-img"><img src="assets/images/Jacket (9).jpeg"
+                            <div class="destination-img"><img src="assets/images/books/the_art_of_war.jpeg"
                                     alt="destination image">
                                 <div class="destination-content">
                                     <div class="media-left">
@@ -510,7 +510,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="destination-box gsap-cursor">
-                            <div class="destination-img"><img src="assets/images/Jacket.jpeg" alt="destination image">
+                            <div class="destination-img"><img src="assets/images/books/the_boyfriend.jpeg" alt="destination image">
                                 <div class="destination-content">
                                     <div class="media-left">
                                         <h4 class="box-title"><a href="destination-details.php">Maldives</a></h4><span
@@ -599,7 +599,7 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/images/Jacket (24).jpeg"
+                                <div class="tour-box_img global-img"><img src="assets/images/books/the_truth_according_to_ember.jpeg"
                                         alt="image"></div>
                                 <div class="tour-content">
                                     <h3 class="box-title"><a href="tour-details.php">catagories : adventure</a></h3>
@@ -615,7 +615,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/images/Jacket (38).jpeg"
+                                <div class="tour-box_img global-img"><img src="assets/images/books/the_ultimate_hidden_truth_of_the_world.jpeg"
                                         alt="image"></div>
                                 <div class="tour-content">
                                     <h3 class="box-title"><a href="tour-details.php">catagories : adventure</a></h3>
@@ -631,7 +631,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/images/Jacket (32).jpeg"
+                                <div class="tour-box_img global-img"><img src="assets/images/books/to_shape_dragons_breath.jpeg"
                                         alt="image"></div>
                                 <div class="tour-content">
                                     <h3 class="box-title"><a href="tour-details.php">catagories : adventure</a></h3>
@@ -647,7 +647,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/images/Jacket (33).jpeg"
+                                <div class="tour-box_img global-img"><img src="assets/images/books/where_the_red_fern_grows.jpeg"
                                         alt="image"></div>
                                 <div class="tour-content">
                                     <h3 class="box-title"><a href="tour-details.php">catagories : adventure</a></h3>
@@ -663,7 +663,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/images/Jacket (39).jpeg"
+                                <div class="tour-box_img global-img"><img src="assets/images/books/woman_of_light.jpeg"
                                         alt="image"></div>
                                 <div class="tour-content">
                                     <h3 class="box-title"><a href="tour-details.php">catagories : adventure</a></h3>
@@ -679,7 +679,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img"><img src="assets/images/Jacket (27).jpeg"
+                                <div class="tour-box_img global-img"><img src="assets/images/books/ashes.jpeg"
                                         alt="image"></div>
                                 <div class="tour-content">
                                     <h3 class="box-title"><a href="tour-details.php">catagories : adventure</a></h3>

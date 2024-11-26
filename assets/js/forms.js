@@ -323,16 +323,32 @@ function handleReturnBooking(bookingId, button) {
     })
         .then(response => response.json())
         .then(data => {
+            const messageBox = document.querySelector('.error-message');
             if (data.status === 'success') {
                 const row = button.closest('tr');
                 row.remove();
-                alert('Booking successfully returned.');
+                messageBox.style.display = 'block';
+                messageBox.style.color = 'green';
+                messageBox.textContent = 'Booking successfully returned.';
             } else {
-                alert('Error: ' + data.message);
+                messageBox.style.display = 'block';
+                messageBox.style.color = 'red';
+                messageBox.textContent = 'Error: ' + data.message;
             }
+
+            setTimeout(() => {
+                messageBox.style.display = 'none';
+            }, 5000);
         })
         .catch(error => {
             console.error('Error:', error);
-            alert('An unexpected error occurred.');
+            const messageBox = document.querySelector('.error-message');
+            messageBox.style.display = 'block';
+            messageBox.style.color = 'red';
+            messageBox.textContent = 'An unexpected error occurred.';
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                messageBox.style.display = 'none';
+            }, 5000);
         });
 }
