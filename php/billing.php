@@ -33,8 +33,8 @@ try {
             exit();
         }
 
-        // Fetch the book details
-        $stmt = $pdo->prepare("SELECT price, stock FROM books WHERE id = :id");
+        // Fetch book details (name, price, stock)
+        $stmt = $pdo->prepare("SELECT name, price, stock FROM books WHERE id = :id");
         $stmt->execute(['id' => $book_id]);
         $book = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -43,29 +43,29 @@ try {
             exit();
         }
 
-        // Check if the book is in stock
         if ($book['stock'] <= 0) {
             echo json_encode(['status' => 'error', 'message' => 'Book is no longer in stock.']);
             exit();
         }
 
-        // Reduce the stock by 1
+        // Decrease stock by 1
         $stmt = $pdo->prepare("UPDATE books SET stock = stock - 1 WHERE id = :id");
         $stmt->execute(['id' => $book_id]);
 
+        // Get item value and book name
         $item_value = $book['price'];
+        $book_name = $book['name'];
 
-        // Check if the user is logged in
         $username = $_SESSION['username'] ?? null;
         if (!$username) {
             echo json_encode(['status' => 'error', 'message' => 'User is not logged in.']);
             exit();
         }
 
-        // Insert the sale record
+        // Insert sales record with book name
         $stmt = $pdo->prepare("
-            INSERT INTO sales (region, first_name, last_name, cin, street_address, cc, city, country, zip, num, username, item_value) 
-            VALUES (:region, :first_name, :last_name, :cin, :street_address, :cc, :city, :country, :zip, :num, :username, :item_value)
+            INSERT INTO sales (region, first_name, last_name, cin, street_address, cc, city, country, zip, num, username, item_value, book_name) 
+            VALUES (:region, :first_name, :last_name, :cin, :street_address, :cc, :city, :country, :zip, :num, :username, :item_value, :book_name)
         ");
         $stmt->execute([
             'region' => $region,
@@ -80,6 +80,7 @@ try {
             'num' => $num,
             'username' => $username,
             'item_value' => $item_value,
+            'book_name' => $book_name, // Insert the book name here
         ]);
 
         echo json_encode(['status' => 'success', 'message' => 'Bought successfully!']);

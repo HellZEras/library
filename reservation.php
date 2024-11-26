@@ -60,8 +60,9 @@
                     <li class="menu-item-has-children"><a href="#">Pages</a>
                         <ul>
                             <li><a href="activites.php">Activities</a></li>
-                            <li><a href="reservation.php">book reservation</a></li>
-                            <li><a href="donation.php">donation</a></li>
+                            <li><a href="shop.php">Book Shop</a></li>
+                            <li><a href="reservation.php">Book Reservation</a></li>
+                            <li><a href="donation.php">Donation</a></li>
                             <li><a href="contact.php">Contact us</a></li>
                         </ul>
                     </li>
@@ -109,8 +110,9 @@
                             <nav class="main-menu d-none d-xl-inline-block">
                                 <ul>
                                     <li><a href="activites.php">Activities</a></li>
-                                    <li><a href="reservation.php">book reservation</a></li>
-                                    <li><a href="donation.php">donation</a></li>
+                                    <li><a href="shop.php">Book Shop</a></li>
+                                    <li><a href="reservation.php">Book Reservation</a></li>
+                                    <li><a href="donation.php">Donation</a></li>
                                     <li><a href="contact.php">Contact us</a></li>
                                 </ul>
                             </nav><button type="button" class="th-menu-toggle d-block d-xl-none"><i
@@ -143,7 +145,7 @@
                 <h2 class="sec-title">Our Amazing collection</h2>
             </div>
             <div class="row gy-4 gx-4">
-                <?php displayBooks() ?>
+                <?php displayReservationBooks() ?>
             </div>
         </div>
     </section>

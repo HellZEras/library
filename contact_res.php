@@ -67,8 +67,9 @@
                     <li class="menu-item-has-children"><a href="#">Pages</a>
                         <ul>
                             <li><a href="activites.php">Activities</a></li>
-                            <li><a href="reservation.php">book reservation</a></li>
-                            <li><a href="donation.php">donation</a></li>
+                            <li><a href="shop.php">Book Shop</a></li>
+                            <li><a href="reservation.php">Book Reservation</a></li>
+                            <li><a href="donation.php">Donation</a></li>
                             <li><a href="contact.php">Contact us</a></li>
                         </ul>
                     </li>
@@ -116,8 +117,9 @@
                             <nav class="main-menu d-none d-xl-inline-block">
                                 <ul>
                                     <li><a href="activites.php">Activities</a></li>
-                                    <li><a href="reservation.php">book reservation</a></li>
-                                    <li><a href="donation.php">donation</a></li>
+                                    <li><a href="shop.php">Book Shop</a></li>
+                                    <li><a href="reservation.php">Book Reservation</a></li>
+                                    <li><a href="donation.php">Donation</a></li>
                                     <li><a href="contact.php">Contact us</a></li>
                                 </ul>
                             </nav><button type="button" class="th-menu-toggle d-block d-xl-none"><i
@@ -225,8 +227,7 @@
                                 <div class="form-group col-12"><textarea name="message" id="message" cols="30" rows="3"
                                         class="form-control" placeholder="Your Message"></textarea> <img
                                         src="assets/img/icon/chat.svg" alt=""></div>
-                                <div class="form-btn col-12 mt-24"><button type="submit" class="th-btn style3" onclick=handleContactRes(event)>Send
-                                        message <img src="assets/img/icon/plane.svg" alt=""></button></div>
+                                <div class="form-btn col-12 mt-24"><button type="submit" class="th-btn style3" id="submit-btn">Book Now<img src="assets/img/icon/plane.svg" alt=""></button></div>
                             </div>
                             <p class="form-messages mb-0 mt-3"></p>
                         </form>
@@ -409,7 +410,100 @@
     <script src="assets/js/nice-select.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/forms.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('identify-form');
+            const submitButton = document.getElementById('submit-btn');
+            
+            submitButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                
+                handleContactRes(event);
+            });
+        });
+
+        function handleContactRes(event) {
+            const urlParams = new URLSearchParams(window.location.search);
+            const bookId = urlParams.get('book_id');
+            console.log("book Id:", bookId);
+
+            const firstName = document.getElementById('name2').value;
+            const lastName = document.getElementById('name3').value;
+            const email = document.getElementById('email1').value;
+            const confirmEmail = document.getElementById('email2').value;
+            const date1 = document.getElementById('d1').value;
+            const date2 = document.getElementById('d2').value;
+            const sexe = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            if (!firstName || !lastName || !email || !confirmEmail || !date1 || !date2 || !sexe) {
+                showMessage('All fields except the message are required.', 'red');
+                return;
+            }
+
+            if (email !== confirmEmail) {
+                showMessage('Email and Confirm Email must match.', 'red');
+                return;
+            }
+
+            if (!validateEmail(email)) {
+                showMessage('Invalid email format.', 'red');
+                return;
+            }
+
+            const dateObj1 = new Date(date1);
+            const dateObj2 = new Date(date2);
+
+            if (dateObj2 <= dateObj1) {
+                showMessage('Date 2 must be later than Date 1.', 'red');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('first_name', firstName);
+            formData.append('last_name', lastName);
+            formData.append('email', email);
+            formData.append('email1', confirmEmail);
+            formData.append('date1', date1);
+            formData.append('date2', date2);
+            formData.append('sex', sexe);
+            formData.append('message', message);
+            if (bookId) {
+                formData.append('book_id', bookId);
+            }
+
+            fetch('/libary/php/contact_res.php', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    const errorMessageBox = document.querySelector('.error-message');
+                    if (data.status === 'error') {
+                        showMessage(data.message, 'red');
+                    } else if (data.status === 'success') {
+                        showMessage(data.message, 'green');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showMessage('An unexpected error occurred. Please try again.', 'red');
+                });
+            }
+
+            function showMessage(message, color) {
+                const errorMessageBox = document.querySelector('.error-message');
+                errorMessageBox.textContent = message;
+                errorMessageBox.style.color = color;
+                errorMessageBox.style.display = 'block';
+            }
+
+            function validateEmail(email) {
+                const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                return emailPattern.test(email);
+            }
+
+    </script>
 </body>
-<!-- Mirrored from html.themeholy.com/tourm/demo/contact.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Oct 2024 04:02:00 GMT -->
 
 </html>

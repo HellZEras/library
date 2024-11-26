@@ -104,6 +104,7 @@ function handleContactFormSubmit(event) {
 }
 
 function handleContactRes(event) {
+    console.log(e);
     event.preventDefault();
 
     const firstName = document.getElementById('name2').value;
@@ -114,6 +115,11 @@ function handleContactRes(event) {
     const date2 = document.getElementById('d2').value;
     const sexe = document.getElementById('subject').value;
     const message = document.getElementById('message').value;
+
+    const urlParams = new URLSearchParams();
+    const bookId = urlParams.get('book_id');
+    console.log(bookId);
+
 
     if (!firstName || !lastName || !email || !confirmEmail || !date1 || !date2 || !sexe) {
         showMessage('All fields except the message are required.', 'red');
@@ -130,6 +136,14 @@ function handleContactRes(event) {
         return;
     }
 
+    const dateObj1 = new Date(date1);
+    const dateObj2 = new Date(date2);
+
+    if (dateObj2 <= dateObj1) {
+        showMessage('Date 2 must be later than Date 1.', 'red');
+        return;
+    }
+
     const formData = new FormData();
     formData.append('first_name', firstName);
     formData.append('last_name', lastName);
@@ -139,6 +153,7 @@ function handleContactRes(event) {
     formData.append('date2', date2);
     formData.append('sex', sexe);
     formData.append('message', message);
+    formData.append('book_id', bookId);
 
     fetch('/libary/php/contact_res.php', {
         method: 'POST',
@@ -159,6 +174,8 @@ function handleContactRes(event) {
             showMessage('An unexpected error occurred. Please try again.', 'red');
         });
 }
+
+
 function handleDonationClick(event) {
     event.preventDefault();
 
@@ -217,7 +234,6 @@ function validateEmail(email) {
 function handleBillingFormSubmit(event) {
     event.preventDefault();
 
-    // Get form data
     const region = document.getElementById('region').value;
     const firstName = document.getElementById('billingFirstName').value;
     const lastName = document.getElementById('billingLastName').value;
@@ -274,7 +290,7 @@ function handleBillingFormSubmit(event) {
             if (data.status === 'error') {
                 showError(data.message);
             } else if (data.status === 'success') {
-                showSuccess('Billing details submitted successfully!');
+                showSuccess('Bought successfully!');
             }
         })
         .catch(error => {
@@ -295,4 +311,28 @@ function showSuccess(message) {
     messageBox.style.display = 'block';
     messageBox.textContent = message;
     messageBox.style.color = 'green';
+}
+function handleReturnBooking(bookingId, button) {
+    const formData = new URLSearchParams();
+    formData.append('booking_id', bookingId);
+
+    fetch('php/return_booking.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formData.toString(),
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                const row = button.closest('tr');
+                row.remove();
+                alert('Booking successfully returned.');
+            } else {
+                alert('Error: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An unexpected error occurred.');
+        });
 }

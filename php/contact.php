@@ -17,18 +17,15 @@ try {
         $sexe = trim($_POST['subject']);
         $message = trim($_POST['message']);
 
-        // Validate required fields
         if (empty($firstName) || empty($lastName) || empty($email) || empty($phoneNumber) || empty($sexe)) {
             echo json_encode(['status' => 'error', 'message' => 'All fields except the message are required.']);
             exit();
         }
 
-        // Validate email format
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             echo json_encode(['status' => 'error', 'message' => 'Invalid email format.']);
             exit();
         }
-
         if (!empty($phoneNumber) && !preg_match('/^[0-9]+$/', $phoneNumber)) {
             echo json_encode(['status' => 'error', 'message' => 'Phone number must be numeric.']);
             exit();

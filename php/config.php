@@ -1,14 +1,14 @@
 <?php
 session_start();
 
-$timeout = 60;
+$timeout = 3600;
 ini_set('session.gc_maxlifetime', $timeout);
 ini_set('session.cookie_lifetime', $timeout);
 
 if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > $timeout)) {
-    session_unset();
-    session_destroy();
-    session_start();
+    unset($_SESSION['user_id']);
+    unset($_SESSION['username']);
+    unset($_SESSION['first_name']);
 }
 $_SESSION['LAST_ACTIVITY'] = time();
 ?>

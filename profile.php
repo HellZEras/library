@@ -1,5 +1,6 @@
 <?php
     require_once('php/config.php');
+    require('php/helpers.php');
 ?>
 <!doctype html>
 <html class="no-js" lang="zxx">
@@ -7,7 +8,6 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Tourm - Travel & Tour Booking Agency HTML Template - Pricing Plan</title>
     <meta name="author" content="Tourm">
     <meta name="description" content="Tourm - Travel & Tour Booking Agency HTML Template ">
     <meta name="keywords" content="Tourm - Travel & Tour Booking Agency HTML Template ">
@@ -58,10 +58,11 @@
                     <li class="menu-item-has-children"><a href="activities.php">Activities</a>
                     </li>
                     <li class="menu-item-has-children"><a href="#">Pages</a>
-                         <ul>
+                        <ul>
                             <li><a href="activites.php">Activities</a></li>
-                            <li><a href="reservation.php">book reservation</a></li>
-                            <li><a href="donation.php">donation</a></li>
+                            <li><a href="shop.php">Book Shop</a></li>
+                            <li><a href="reservation.php">Book Reservation</a></li>
+                            <li><a href="donation.php">Donation</a></li>
                             <li><a href="contact.php">Contact us</a></li>
                         </ul>
                     </li>
@@ -109,8 +110,9 @@
                             <nav class="main-menu d-none d-xl-inline-block">
                                 <ul>
                                     <li><a href="activites.php">Activities</a></li>
-                                    <li><a href="reservation.php">book reservation</a></li>
-                                    <li><a href="donation.php">donation</a></li>
+                                    <li><a href="shop.php">Book Shop</a></li>
+                                    <li><a href="reservation.php">Book Reservation</a></li>
+                                    <li><a href="donation.php">Donation</a></li>
                                     <li><a href="contact.php">Contact us</a></li>
                                 </ul>
                             </nav><button type="button" class="th-menu-toggle d-block d-xl-none"><i
@@ -125,103 +127,8 @@
             </div>
         </div>
     </header>
-    <div class="breadcumb-wrapper" data-bg-src="assets/img/hero/menu2.jpeg">
-        <div class="container">
-            <div class="breadcumb-content">
-                <h1 class="breadcumb-title">Pricing Plan</h1>
-                <ul class="breadcumb-menu">
-                    <li><a href="home-travel.php">Home</a></li>
-                    <li>Pricing Plan</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <section class="position-relative space">
-        <div class="container">
-            <div class="title-area text-center"><span class="sub-title">Let’s Checkin</span>
-                <h2 class="sec-title">Pricing plans</h2>
-            </div>
-            <div class="row gy-4 justify-content-center">
-                <div class="col-xl-4 col-md-6">
-                    <div class="price-card">
-                        <div class="offer-tag">Popular</div>
-                        <div class="price-card_wrapp">
-                            <div class="price-card_icon"><img src="assets/img/icon/price_1_1.svg" alt="img"></div>
-                            <h3 class="box-title">Basic Plan</h3>
-                        </div>
-                        <div class="price-card_content">
-                            <h4 class="price-card_price">5.0 dt<span class="duration">/Per month</span></h4>
-                            <p class="price-card_text">Essential services for basic and signle person seeking.</p>
-                            <div class="checklist">
-                                <ul>
-                                    <li>Up to 2 members</li>
-                                    <li>Room Service Fees</li>
-                                    <li>Driver Service Feet</li>
-                                    <li>Tour management</li>
-                                    <li>Collaboration</li>
-                                    <li>Entrance Fees</li>
-                                    <li>Guide Fees in Destination</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="price-btn"><a href="" class="th-btn style3 w-100">Get Started</a></div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="price-card active">
-                        <div class="offer-tag">Popular</div>
-                        <div class="price-card_wrapp">
-                            <div class="price-card_icon"><img src="assets/img/icon/price_1_2.svg" alt="img"></div>
-                            <h3 class="box-title">Advanced Plan</h3>
-                        </div>
-                        <div class="price-card_content">
-                            <h4 class="price-card_price">20.00 dt<span class="duration">/Per month</span></h4>
-                            <p class="price-card_text">Essential services for basic and signle person seeking.</p>
-                            <div class="checklist">
-                                <ul>
-                                    <li>Up to 2 members</li>
-                                    <li>Room Service Fees</li>
-                                    <li>Driver Service Feet</li>
-                                    <li>Tour management</li>
-                                    <li>Collaboration</li>
-                                    <li>Entrance Fees</li>
-                                    <li>Auto refresh ads</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="price-btn"><a href="" class="th-btn style3 w-100">Get Started</a></div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="price-card">
-                        <div class="offer-tag">Popular</div>
-                        <div class="price-card_wrapp">
-                            <div class="price-card_icon"><img src="assets/img/icon/price_1_3.svg" alt="img"></div>
-                            <h3 class="box-title">Premium Plan</h3>
-                        </div>
-                        <div class="price-card_content">
-                            <h4 class="price-card_price">35.00 dt<span class="duration">/per month</span></h4>
-                            <p class="price-card_text">Essential services for basic and signle person seeking.</p>
-                            <div class="checklist">
-                                <ul>
-                                    <li>Up to 2 members</li>
-                                    <li>Room Service Fees</li>
-                                    <li>Driver Service Feet</li>
-                                    <li>Tour management</li>
-                                    <li>Collaboration</li>
-                                    <li>Entrance Fees</li>
-                                    <li>Auto refresh ads</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="price-btn"><a href="" class="th-btn style3 w-100">Get Started</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-    </section>
-
+    <?php generate_profile()  ?>
 
     <footer class="footer-wrapper bg-title footer-layout2">
         <div class="widget-area">
@@ -230,7 +137,7 @@
                     <div class="newsletter-top">
                         <div class="row gy-4 align-items-center">
                             <div class="col-lg-5">
-                                <h2 class="newsletter-title text-white text-capitalize mb-0">don't forget to join us
+                                <h2 class="newsletter-title text-white text-capitalize mb-0">don't forget to subscribe
                                 </h2>
                             </div>
                             <div class="col-lg-7">
@@ -263,8 +170,8 @@
                                 <div class="info-box_text">
                                     <div class="icon"><img src="assets/img/icon/phone.svg" alt="img"></div>
                                     <div class="details">
-                                        <p><a href="tel:+01234567890" class="info-box_link">+01 234 567 890</a></p>
-                                        <p><a href="tel:+09876543210" class="info-box_link">+09 876 543 210</a></p>
+                                        <p><a href="tel:+01234567890" class="info-box_link">+216 56 645 774</a></p>
+                                        <p><a href="tel:+09876543210" class="info-box_link">+216 00 000 000</a></p>
                                     </div>
                                 </div>
                                 <div class="info-box_text">
@@ -279,12 +186,13 @@
                                 <div class="info-box_text">
                                     <div class="icon"><img src="assets/img/icon/location-dot.svg" alt="img"></div>
                                     <div class="details">
-                                        <p>bizerte , tunisia</p>
+                                        <p>789 bizerte , tunise</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -372,7 +280,7 @@
             </div>
         </div>
     </div>
-    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <!-- <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
@@ -385,9 +293,9 @@
     <script src="assets/js/matter.min.js"></script>
     <script src="assets/js/matterjs-custom.js"></script>
     <script src="assets/js/nice-select.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script> -->
     <script src="assets/js/forms.js"></script>
 </body>
-<!-- Mirrored from html.themeholy.com/tourm/demo/price.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Oct 2024 04:01:58 GMT -->
+<!-- Mirrored from html.themeholy.com/tourm/demo/contact.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Oct 2024 04:02:00 GMT -->
 
 </html>

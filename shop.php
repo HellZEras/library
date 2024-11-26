@@ -1,5 +1,6 @@
 <?php
     require_once('php/config.php');
+    require('php/helpers.php');
 ?>
 <!doctype html>
 <html class="no-js" lang="zxx">
@@ -7,7 +8,6 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Tourm - Travel & Tour Booking Agency HTML Template - Shops</title>
     <meta name="author" content="Tourm">
     <meta name="description" content="Tourm - Travel & Tour Booking Agency HTML Template ">
     <meta name="keywords" content="Tourm - Travel & Tour Booking Agency HTML Template ">
@@ -60,8 +60,9 @@
                     <li class="menu-item-has-children"><a href="#">Pages</a>
                         <ul>
                             <li><a href="activites.php">Activities</a></li>
-                            <li><a href="reservation.php">book reservation</a></li>
-                            <li><a href="donation.php">donation</a></li>
+                            <li><a href="shop.php">Book Shop</a></li>
+                            <li><a href="reservation.php">Book Reservation</a></li>
+                            <li><a href="donation.php">Donation</a></li>
                             <li><a href="contact.php">Contact us</a></li>
                         </ul>
                     </li>
@@ -109,8 +110,9 @@
                             <nav class="main-menu d-none d-xl-inline-block">
                                 <ul>
                                     <li><a href="activites.php">Activities</a></li>
-                                    <li><a href="reservation.php">book reservation</a></li>
-                                    <li><a href="donation.php">donation</a></li>
+                                    <li><a href="shop.php">Book Shop</a></li>
+                                    <li><a href="reservation.php">Book Reservation</a></li>
+                                    <li><a href="donation.php">Donation</a></li>
                                     <li><a href="contact.php">Contact us</a></li>
                                 </ul>
                             </nav><button type="button" class="th-menu-toggle d-block d-xl-none"><i
@@ -128,64 +130,30 @@
     <div class="breadcumb-wrapper" data-bg-src="assets/img/hero/menu2.jpeg">
         <div class="container">
             <div class="breadcumb-content">
-                <h1 class="breadcumb-title">Shop</h1>
+                <h1 class="breadcumb-title">book takeout</h1>
                 <ul class="breadcumb-menu">
                     <li><a href="home-travel.php">Home</a></li>
-                    <li>Shop</li>
+                    <li>About books</li>
                 </ul>
             </div>
         </div>
     </div>
-    <section class="space-top space-extra-bottom">
+    <br><br><br><br><br><br><br>
+    <section class="position-relative overflow-hidden space-bottom" id="destination-sec">
         <div class="container">
-            <div class="th-sort-bar">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-md-4">
-                    </div>
-                    <div class="col-md-auto">
-                        <div class="sorting-filter-wrap">
-                    </div>
-                </div>
+            <div class="title-area text-center"><span class="sub-title">Services We Offer</span>
+                <h2 class="sec-title">Our Amazing collection</h2>
             </div>
-            <div class="row gy-40">
-                <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade active show" id="tab-grid" role="tabpanel"
-                        aria-labelledby="tab-shop-grid">
-                        <div class="row gy-40">
-                            <div class="col-xl-3 col-sm-6">
-                                <div class="th-product product-grid">
-                                    <div class="product-img"><img src="assets/images/Jacket.jpeg" alt="Product Image">
-                                        <span class="product-tag">kids</span>
-                                        <div class="actions"><a href="#QuickView" class="icon-btn popup-content"><i
-                                                    class="far fa-eye"></i></a> <a href="checkout.php" class="icon-btn"><i
-                                                    class="far fa-cart-plus"></i></a></div>
-                                    </div>
-                                    <div class="product-content">
-                                        <span class="price">25.00 DT</span>
-                                        <div class="woocommerce-product-rating"><span class="count">(5.00 Review)</span>
-                                            <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                                <span>Rated <strong class="rating">5.00</strong> out of 5 based on <span
-                                                        class="rating">1</span> customer rating</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="th-pagination text-center pt-50">
-                        <ul>
-                            <li><a class="active" href="blog.php">1</a></li>
-                            <li><a href="">2</a></li>
-                            <li><a href="">3</a></li>
-                            <li><a href="">4</a></li>
-                            <li><a class="next-page" href="">Next <img src="assets/img/icon/arrow-right4.svg"
-                                        alt=""></a></li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="row gy-4 gx-4">
+                <?php displayShopBooks() ?>
+            </div>
+        </div>
     </section>
+    <div class="elements-sec bg-white overflow-hidden">
+        <div class="container-fluid">
+            <div class="tags-container relative"></div>
+        </div>
+    </div>
     <footer class="footer-wrapper bg-title footer-layout2">
         <div class="widget-area">
             <div class="container">
@@ -351,5 +319,6 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/forms.js"></script>
 </body>
+<!-- Mirrored from html.themeholy.com/tourm/demo/about.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Oct 2024 04:01:32 GMT -->
 
 </html>

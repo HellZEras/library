@@ -57,8 +57,9 @@
                     <li class="menu-item-has-children"><a href="#">Pages</a>
                         <ul>
                             <li><a href="activites.php">Activities</a></li>
-                            <li><a href="reservation.php">book reservation</a></li>
-                            <li><a href="donation.php">donation</a></li>
+                            <li><a href="shop.php">Book Shop</a></li>
+                            <li><a href="reservation.php">Book Reservation</a></li>
+                            <li><a href="donation.php">Donation</a></li>
                             <li><a href="contact.php">Contact us</a></li>
                         </ul>
                     </li>
@@ -88,14 +89,19 @@
                 <div class="header-right">
                     <div class="header-links">
                         <ul>
-                            <?php if (isset($_SESSION['username'])): ?>
-                                <li>Hello, <?php echo htmlspecialchars($_SESSION['username']); ?>!</li>
-                                <a href="/libary/php/logout.php">Logout</a>
-                            <?php else: ?>
-                                <li class="d-none d-md-inline-block"><a href="faq.php">FAQ</a></li>
-                                <li class="d-none d-md-inline-block"><a href="contact.php">Support</a></li>
-                                <li><a href="#login-form" class="popup-content">Sign In / Register<i class="fa-regular fa-user"></i></a></li>
-                            <?php endif; ?>
+                        <?php if (isset($_SESSION['username'])): ?>
+                            <li>
+                                Hello, 
+                                <a href="profile.php?username=<?php echo urlencode($_SESSION['username']); ?>">
+                                    <?php echo htmlspecialchars($_SESSION['username']); ?>
+                                </a>!
+                            </li>
+                            <a href="/libary/php/logout.php">Logout</a>
+                        <?php else: ?>
+                            <li class="d-none d-md-inline-block"><a href="faq.php">FAQ</a></li>
+                            <li class="d-none d-md-inline-block"><a href="contact.php">Support</a></li>
+                            <li><a href="#login-form" class="popup-content">Sign In / Register<i class="fa-regular fa-user"></i></a></li>
+                        <?php endif; ?>
                         </ul>
                     </div>
                 </div>
@@ -115,8 +121,9 @@
                             <nav class="main-menu d-none d-xl-inline-block">
                                 <ul>
                                     <li><a href="activites.php">Activities</a></li>
-                                    <li><a href="reservation.php">book reservation</a></li>
-                                    <li><a href="donation.php">donation</a></li>
+                                    <li><a href="shop.php">Book Shop</a></li>
+                                    <li><a href="reservation.php">Book Reservation</a></li>
+                                    <li><a href="donation.php">Donation</a></li>
                                     <li><a href="contact.php">Contact us</a></li>
                                 </ul>
                             </nav><button type="button" class="th-menu-toggle d-block d-xl-none"><i
