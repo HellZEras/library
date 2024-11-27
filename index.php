@@ -207,13 +207,13 @@
                                     class="form-select nice-select">
                                     <option value="Select Destination" selected="selected" disabled="disabled">Select
                                         Destination</option>
-                                    <option value="Australia">beja</option>
-                                    <option value="Dubai">tunis</option>
-                                    <option value="England">el kef</option>
-                                    <option value="Sweden">manouba</option>
-                                    <option value="Thailand">ariana</option>
-                                    <option value="Egypt">nabel</option>
-                                    <option value="Saudi Arab">bizerte</option>
+                                    <option value="Beja">Beja</option>
+                                    <option value="Tunis">Tunis</option>
+                                    <option value="Kef">Kef</option>
+                                    <option value="Manouba">Manouba</option>
+                                    <option value="Ariana">Ariana</option>
+                                    <option value="Nabel">Nabel</option>
+                                    <option value="Bizerte">Bizerte</option>
                                 </select></div>
                         </div>
                         <div class="form-group col-md-6 col-lg-auto">
