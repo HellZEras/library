@@ -98,28 +98,30 @@ function getTotalProfit() {
 }
 
 function renderSalesBlock() {
-    $totalProfit = getTotalProfit();
-    $formattedProfit = number_format($totalProfit, 2, '.', ',') . ' dt'; // Format with two decimals and currency
+  $totalProfit = getTotalProfit();
+  // Ensure $totalProfit is a valid number, default to 0 if NULL or invalid
+  $formattedProfit = number_format($totalProfit ?? 0, 2, '.', ',') . ' dt'; // Format with two decimals and currency
 
-    echo "
-        <div class=\"col-xl-3 col-sm-6\">
-          <div class=\"card\">
-            <div class=\"card-header p-2 ps-3\">
-              <div class=\"d-flex justify-content-between\">
-                <div>
-                  <p class=\"text-sm mb-0 text-capitalize\">Sales</p>
-                  <h4 class=\"mb-0\">$formattedProfit</h4>
-                </div>
-                <div class=\"icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg\">
-                  <i class=\"material-symbols-rounded opacity-10\">weekend</i>
-                </div>
+  echo "
+      <div class=\"col-xl-3 col-sm-6\">
+        <div class=\"card\">
+          <div class=\"card-header p-2 ps-3\">
+            <div class=\"d-flex justify-content-between\">
+              <div>
+                <p class=\"text-sm mb-0 text-capitalize\">Sales</p>
+                <h4 class=\"mb-0\">$formattedProfit</h4>
+              </div>
+              <div class=\"icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg\">
+                <i class=\"material-symbols-rounded opacity-10\">weekend</i>
               </div>
             </div>
-            <hr class=\"dark horizontal my-0\">
           </div>
+          <hr class=\"dark horizontal my-0\">
         </div>
-    ";
+      </div>
+  ";
 }
+
 
 function fetchBooks() {
     try {

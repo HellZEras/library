@@ -4,7 +4,7 @@ function handleLoginClick(event) {
     const email = document.getElementById('email').value;
     const password = document.getElementById('pasword').value;
 
-    fetch('/libary/php/login.php', {
+    fetch('/library/php/login.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: `email=${encodeURIComponent(email)}&pasword=${encodeURIComponent(password)}`
@@ -17,7 +17,7 @@ function handleLoginClick(event) {
                 messageBox.textContent = data.message;
             } else if (data.status === 'success') {
                 messageBox.style.display = 'none';
-                window.location.href = '/libary/index.php';
+                window.location.href = '/library/index.php';
             }
         })
         .catch(error => {
@@ -38,7 +38,7 @@ function handleRegistrationSubmit(event) {
     const confirmEmail = document.getElementById('new_email_confirm').value;
     const password = document.getElementById('pass').value;
 
-    fetch('/libary/php/register.php', {
+    fetch('/library/php/register.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: `username=${encodeURIComponent(username)}&firstname=${encodeURIComponent(firstname)}&lastname=${encodeURIComponent(lastname)}&new_email=${encodeURIComponent(email)}&new_email_confirm=${encodeURIComponent(confirmEmail)}&password=${encodeURIComponent(password)}`
@@ -51,7 +51,7 @@ function handleRegistrationSubmit(event) {
                 messageBox.textContent = data.message;
             } else if (data.status === 'success') {
                 messageBox.style.display = 'none';
-                window.location.href = '/libary/index.php';
+                window.location.href = '/library/index.php';
             }
         })
         .catch(error => {
@@ -75,7 +75,7 @@ function handleContactFormSubmit(event) {
 
     const formData = `name1=${encodeURIComponent(firstName)}&name2=${encodeURIComponent(lastName)}&email3=${encodeURIComponent(email)}&num=${encodeURIComponent(phoneNumber)}&subject=${encodeURIComponent(sexe)}&message=${encodeURIComponent(message)}`;
 
-    fetch('/libary/php/contact.php', {
+    fetch('/library/php/contact.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: formData
@@ -155,7 +155,7 @@ function handleContactRes(event) {
     formData.append('message', message);
     formData.append('book_id', bookId);
 
-    fetch('/libary/php/contact_res.php', {
+    fetch('/library/php/contact_res.php', {
         method: 'POST',
         body: formData
     })
@@ -184,7 +184,7 @@ function handleDonationClick(event) {
     const amount = document.getElementById('subject').value;
     const message = document.getElementById('message').value;
 
-    fetch('/libary/php/donation.php', {
+    fetch('/library/php/donation.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: `name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&subject=${encodeURIComponent(amount)}&message=${encodeURIComponent(message)}`

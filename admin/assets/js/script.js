@@ -253,7 +253,7 @@ function handleSaveClick(event, id) {
     requestBody.append('price', price);
     requestBody.append('stock', stock);
 
-    fetch('/libary/admin/php/update_book.php', {
+    fetch('/library/admin/php/update_book.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: requestBody.toString()
@@ -312,7 +312,7 @@ function handleDeleteClick(event, id) {
     const requestBody = new URLSearchParams();
     requestBody.append('id', id);
 
-    fetch('/libary/admin/php/delete_book.php', {
+    fetch('/library/admin/php/delete_book.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: requestBody.toString()
@@ -382,7 +382,7 @@ function handleAddBookClick(event) {
     requestBody.append('price', price);
     requestBody.append('stock', stock);
 
-    fetch('/libary/admin/php/add_book.php', {
+    fetch('/library/admin/php/add_book.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: requestBody.toString()

@@ -6,6 +6,6 @@
     unset($_SESSION['username']);
     unset($_SESSION['first_name']);
     sleep(1);
-    header("Location: /libary/index.php");
+    header("Location: /library/index.php");
     exit;
 ?>
