@@ -17,7 +17,7 @@ function handleLoginClick(event) {
                 messageBox.textContent = data.message;
             } else if (data.status === 'success') {
                 messageBox.style.display = 'none';
-                window.location.href = '/library/index.php';
+                window.location.href = '/library/index.phtml';
             }
         })
         .catch(error => {
@@ -51,7 +51,7 @@ function handleRegistrationSubmit(event) {
                 messageBox.textContent = data.message;
             } else if (data.status === 'success') {
                 messageBox.style.display = 'none';
-                window.location.href = '/library/index.php';
+                window.location.href = '/library/index.phtml';
             }
         })
         .catch(error => {

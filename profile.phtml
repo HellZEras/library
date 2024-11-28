@@ -1,6 +1,6 @@
 <?php
     require_once('php/config.php');
-    require('php/book_details.php');
+    require('php/helpers.php');
 ?>
 <!doctype html>
 <html class="no-js" lang="zxx">
@@ -43,19 +43,6 @@
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<style>
-    .error-message {
-        color: red;
-        font-size: 0.875rem;
-        margin-top: 5px;
-    }
-
-    input.error,
-    textarea.error,
-    select.error {
-        border-color: red;
-    }
-</style>
 
 <body>
     <div class="magic-cursor relative z-10">
@@ -68,20 +55,20 @@
             <div class="th-mobile-menu">
                 <ul>
                     <img src="assets/images/spl-stickylogo.png" alt="">
-                    <li class="menu-item-has-children"><a href="activities.php">Activities</a>
+                    <li class="menu-item-has-children"><a href="activities.phtml">Activities</a>
                     </li>
                     <li class="menu-item-has-children"><a href="#">Pages</a>
                         <ul>
-                            <li><a href="activites.php">Activities</a></li>
-                            <li><a href="shop.php">Book Shop</a></li>
-                            <li><a href="reservation.php">Book Reservation</a></li>
-                            <li><a href="donation.php">Donation</a></li>
-                            <li><a href="contact.php">Contact us</a></li>
+                            <li><a href="activites.phtml">Activities</a></li>
+                            <li><a href="shop.phtml">Book Shop</a></li>
+                            <li><a href="reservation.phtml">Book Reservation</a></li>
+                            <li><a href="donation.phtml">Donation</a></li>
+                            <li><a href="contact.phtml">Contact us</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item-has-children"><a href="donation.php">donation</a>
+                    <li class="menu-item-has-children"><a href="donation.phtml">donation</a>
                     </li>
-                    <li><a href="contact.php">Contact us</a></li>
+                    <li><a href="contact.phtml">Contact us</a></li>
                 </ul>
             </div>
         </div>
@@ -99,7 +86,7 @@
                                     <?php if (isset($_SESSION['username'])): ?>
                                         <li>
                                             Hello, 
-                                            <a href="profile.php?username=<?php echo urlencode($_SESSION['username']); ?>" style="color: cyan; text-decoration: underline;">
+                                            <a href="profile.phtml?username=<?php echo urlencode($_SESSION['username']); ?>" style="color: cyan; text-decoration: underline;">
                                                 <?php echo htmlspecialchars($_SESSION['username']); ?>
                                             </a>!
                                         </li>
@@ -121,23 +108,23 @@
                 <div class="container th-container">
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto">
-                            <div class="header-logo"><a href="index.php"><img
+                            <div class="header-logo"><a href="index.phtml"><img
                                         src="assets/images/spl-stickylogo.png" alt="Tourm"></a></div>
                         </div>
                         <div class="col-auto me-xl-auto">
                             <nav class="main-menu d-none d-xl-inline-block">
                                 <ul>
-                                    <li><a href="activites.php">Activities</a></li>
-                                    <li><a href="shop.php">Book Shop</a></li>
-                                    <li><a href="reservation.php">Book Reservation</a></li>
-                                    <li><a href="donation.php">Donation</a></li>
-                                    <li><a href="contact.php">Contact us</a></li>
+                                    <li><a href="activites.phtml">Activities</a></li>
+                                    <li><a href="shop.phtml">Book Shop</a></li>
+                                    <li><a href="reservation.phtml">Book Reservation</a></li>
+                                    <li><a href="donation.phtml">Donation</a></li>
+                                    <li><a href="contact.phtml">Contact us</a></li>
                                 </ul>
                             </nav><button type="button" class="th-menu-toggle d-block d-xl-none"><i
                                     class="far fa-bars"></i></button>
                         </div>
                         <div class="col-auto d-none d-xl-block">
-                            <div class="header-button"><a href="reservation.php" class="th-btn style3 th-icon">Book Now</a>
+                            <div class="header-button"><a href="reservation.phtml" class="th-btn style3 th-icon">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -145,71 +132,9 @@
             </div>
         </div>
     </header>
-    <div class="breadcumb-wrapper" data-bg-src="assets/img/hero/menu2.jpeg">
-        <div class="container">
-            <div class="breadcumb-content">
-                <h1 class="breadcumb-title">Checkout</h1>
-                <ul class="breadcumb-menu">
-                    <li><a href="home-travel.php">Home</a></li>
-                    <li>Checkout</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="th-checkout-wrapper space-top space-extra-bottom">
-        <div class="container">
-            <form action="#" class="woocommerce-checkout mt-40" id="billingForm">
-                <h2 class="h4">Billing Details</h2>
-                <div class="row">
-                    <div class="col-12 form-group">
-                        <select class="form-select" id="region">
-                            <option value="" disabled selected>Select Region</option>
-                            <option>tunise</option>
-                            <option>kef</option>
-                            <option>bizerte</option>
-                            <option>beja</option>
-                            <option>nabel</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6 form-group">
-                        <input type="text" class="form-control" placeholder="First Name" id="billingFirstName">
-                    </div>
-                    <div class="col-md-6 form-group">
-                        <input type="text" class="form-control" placeholder="Last Name" id="billingLastName">
-                    </div>
-                    <div class="col-12 form-group">
-                        <input type="text" class="form-control" placeholder="CIN" id="cin">
-                    </div>
-                    <div class="col-12 form-group">
-                        <input type="text" class="form-control" placeholder="Street Address" id="streetAddress">
-                    </div>
-                    <div class="col-12 form-group">
-                        <input type="text" class="form-control" placeholder="Card Number" id="cardNumber">
-                    </div><br>
-                    <div class="col-12 form-group">
-                        <input type="text" class="form-control" placeholder="Town / City" id="city">
-                    </div><br>
-                    <div class="col-md-6 form-group">
-                        <input type="text" class="form-control" placeholder="Country" id="country">
-                    </div><br>
-                    <div class="col-md-6 form-group">
-                        <input type="text" class="form-control" placeholder="Postcode / Zip" id="postcode">
-                    </div><br>
-                    <div class="col-12 form-group">
-                        <input type="text" class="form-control" placeholder="Phone Number" id="billingPhone">
-                    </div><br>
-                </div>
-            </form>
-            <h4 class="mt-4 pt-lg-2">Your Order</h4>
-            <form action="#" class="woocommerce-cart-form">
-                <?php displayBookDetails()  ?>
-            </form>
-            <div class="mt-lg-3 mb-30">
-                <div class="form-row place-order"><button type="submit" class="th-btn" onclick=handleBillingFormSubmit(event)>Place order</button></div>
-                <div class="error-message" style="display: none;"></div>
-            </div>
-        </div>
-    </div>
+
+    <?php generate_profile()  ?>
+
     <footer class="footer-wrapper bg-title footer-layout2">
         <div class="widget-area">
             <div class="container">
@@ -217,7 +142,7 @@
                     <div class="newsletter-top">
                         <div class="row gy-4 align-items-center">
                             <div class="col-lg-5">
-                                <h2 class="newsletter-title text-white text-capitalize mb-0">don't forget to join us
+                                <h2 class="newsletter-title text-white text-capitalize mb-0">don't forget to subscribe
                                 </h2>
                             </div>
                             <div class="col-lg-7">
@@ -236,9 +161,9 @@
                             <h3 class="widget_title">Quick Links</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="index.php">Home</a></li>
-                                    <li><a href="contact.php">Terms of Service</a></li>
-                                    <li><a href="contact.php">Tour Booking Now</a></li>
+                                    <li><a href="index.phtml">Home</a></li>
+                                    <li><a href="contact.phtml">Terms of Service</a></li>
+                                    <li><a href="contact.phtml">Tour Booking Now</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -250,8 +175,8 @@
                                 <div class="info-box_text">
                                     <div class="icon"><img src="assets/img/icon/phone.svg" alt="img"></div>
                                     <div class="details">
-                                        <p><a href="tel:+01234567890" class="info-box_link">+01 234 567 890</a></p>
-                                        <p><a href="tel:+09876543210" class="info-box_link">+09 876 543 210</a></p>
+                                        <p><a href="tel:+01234567890" class="info-box_link">+216 56 645 774</a></p>
+                                        <p><a href="tel:+09876543210" class="info-box_link">+216 00 000 000</a></p>
                                     </div>
                                 </div>
                                 <div class="info-box_text">
@@ -266,12 +191,13 @@
                                 <div class="info-box_text">
                                     <div class="icon"><img src="assets/img/icon/location-dot.svg" alt="img"></div>
                                     <div class="details">
-                                        <p>bizerte , tunisia</p>
+                                        <p>789 bizerte , tunise</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

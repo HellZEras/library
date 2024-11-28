@@ -42,14 +42,6 @@
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<style>
-    .error-message {
-        font-size: 14px;
-        font-weight: bold;
-        color: red;
-        margin-top: 5px;
-    }
-</style>
 
 <body>
     <div class="magic-cursor relative z-10">
@@ -62,20 +54,26 @@
             <div class="th-mobile-menu">
                 <ul>
                     <img src="assets/images/spl-stickylogo.png" alt="">
-                    <li class="menu-item-has-children"><a href="activities.php">Activities</a>
+                    <li class="menu-item-has-children mega-menu-wrap"><a class="active" href="index.phtml">Home</a>
+                        <ul class="sub-menu">
+                            <li><a href="index.phtml">kids page</a></li>
+                            <li><a href="index.phtml">adult page</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children"><a href="activities.phtml">Activities</a>
                     </li>
                     <li class="menu-item-has-children"><a href="#">Pages</a>
                         <ul>
-                            <li><a href="activites.php">Activities</a></li>
-                            <li><a href="shop.php">Book Shop</a></li>
-                            <li><a href="reservation.php">Book Reservation</a></li>
-                            <li><a href="donation.php">Donation</a></li>
-                            <li><a href="contact.php">Contact us</a></li>
+                            <li><a href="activites.phtml">Activities</a></li>
+                            <li><a href="shop.phtml">Book Shop</a></li>
+                            <li><a href="reservation.phtm">Book Reservation</a></li>
+                            <li><a href="donation.phtml">Donation</a></li>
+                            <li><a href="contact.phtml">Contact us</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children"><a href="donation.php">donation</a>
                     </li>
-                    <li><a href="contact.php">Contact us</a></li>
+                    <li><a href="contact.phtml">Contact us</a></li>
                 </ul>
             </div>
         </div>
@@ -93,7 +91,7 @@
                                     <?php if (isset($_SESSION['username'])): ?>
                                         <li>
                                             Hello, 
-                                            <a href="profile.php?username=<?php echo urlencode($_SESSION['username']); ?>" style="color: cyan; text-decoration: underline;">
+                                            <a href="profile.phtml?username=<?php echo urlencode($_SESSION['username']); ?>" style="color: cyan; text-decoration: underline;">
                                                 <?php echo htmlspecialchars($_SESSION['username']); ?>
                                             </a>!
                                         </li>
@@ -121,17 +119,17 @@
                         <div class="col-auto me-xl-auto">
                             <nav class="main-menu d-none d-xl-inline-block">
                                 <ul>
-                                    <li><a href="activites.php">Activities</a></li>
-                                    <li><a href="shop.php">Book Shop</a></li>
-                                    <li><a href="reservation.php">Book Reservation</a></li>
-                                    <li><a href="donation.php">Donation</a></li>
-                                    <li><a href="contact.php">Contact us</a></li>
+                                    <li><a href="activites.phtml">Activities</a></li>
+                                    <li><a href="shop.phtml">Book Shop</a></li>
+                                    <li><a href="reservation.phtml">Book Reservation</a></li>
+                                    <li><a href="donation.phtml">Donation</a></li>
+                                    <li><a href="contact.phtml">Contact us</a></li>
                                 </ul>
                             </nav><button type="button" class="th-menu-toggle d-block d-xl-none"><i
                                     class="far fa-bars"></i></button>
                         </div>
                         <div class="col-auto d-none d-xl-block">
-                            <div class="header-button"><a href="reservation.php" class="th-btn style3 th-icon">Book Now</a>
+                            <div class="header-button"><a href="reservation.phtml" class="th-btn style3 th-icon">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -142,111 +140,81 @@
     <div class="breadcumb-wrapper" data-bg-src="assets/img/hero/menu2.jpeg">
         <div class="container">
             <div class="breadcumb-content">
-                <h1 class="breadcumb-title">Contact Us</h1>
+                <h1 class="breadcumb-title">Our Gallery</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="home-travel.php">Home</a></li>
-                    <li>Contact Us</li>
+                    <li><a href="index.phtml">Home</a></li>
+                    <li>Our Gallery</li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="space">
-        <div class="container">
-            <div class="title-area text-center"><span class="sub-title">Get In Touch</span>
-                <h2 class="sec-title">Our Contact Information</h2>
+    <div class="overflow-hidden space" id="gallery-sec">
+        <div class="container-fuild">
+            <div class="title-area mb-30 text-center"><span class="sub-title">Explore our activities</span>
+                <h2 class="sec-title">A truly exceptional experience</h2>
             </div>
-            <div class="row gy-4 justify-content-center">
-                <div class="col-xl-4 col-lg-6">
-                    <div class="about-contact-grid style2">
-                        <div class="about-contact-icon"><img src="assets/img/icon/location-dot2.svg" alt=""></div>
-                        <div class="about-contact-details">
-                            <h6 class="box-title">Our Address</h6>
-                            <p class="about-contact-details-text">177 bizerte , tunise</p>
-                            <p class="about-contact-details-text">Road to manzel abd rahmen</p>
-                        </div>
+            <div class="row gy-4 gallery-row4">
+                <div class="col-auto">
+                    <div class="gallery-box style5">
+                        <div class="gallery-img global-img"><img src="assets/images/act/library-story-time.jpg"
+                                alt="gallery image"> <a href="assets/images/act/library-story-time.jpg"
+                                class="icon-btn popup-image"><i class="fal fa-magnifying-glass-plus"></i></a></div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="about-contact-grid">
-                        <div class="about-contact-icon"><img src="assets/img/icon/call.svg" alt=""></div>
-                        <div class="about-contact-details">
-                            <h6 class="box-title">Phone Number</h6>
-                            <p class="about-contact-details-text"><a href="tel:01234567890">+216 56 645 774</a></p>
-                            <p class="about-contact-details-text"><a href="tel:01234567890">+216 00 000 000</a></p>
-                        </div>
+                <div class="col-auto">
+                    <div class="gallery-box style5">
+                        <div class="gallery-img global-img"><img src="assets/images/act/School-Library-11_16_22.jpg"
+                                alt="gallery image"> <a href="assets/images/act/School-Library-11_16_22.jpg"
+                                class="icon-btn popup-image"><i class="fal fa-magnifying-glass-plus"></i></a></div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="about-contact-grid">
-                        <div class="about-contact-icon"><img src="assets/img/icon/mail.svg" alt=""></div>
-                        <div class="about-contact-details">
-                            <h6 class="box-title">Email Address</h6>
-                            <p class="about-contact-details-text"><a
-                                    href="mailto:mailinfo00@tourm.com">suppor14@gmail.com</a></p>
-                            <p class="about-contact-details-text"><a
-                                    href="mailto:support24@tourm.com">support2@gmail.com</a></p>
-                        </div>
+                <div class="col-auto">
+                    <div class="gallery-box style5">
+                        <div class="gallery-img global-img"><img
+                                src="assets/images/act/womens-2701154__480-660x400@2x.jpg" alt="gallery image"> <a
+                                href="assets/images/act/womens-2701154__480-660x400@2x.jpg"
+                                class="icon-btn popup-image"><i class="fal fa-magnifying-glass-plus"></i></a></div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="space-extra2-top space-extra2-bottom" data-bg-src="assets/img/hero/menu33.jpeg">
-        <div class="container">
-            <div class="row flex-row-reverse justify-content-center align-items-center">
-                <div class="col-lg-6">
-                    <div class="video-box1"><a href="https://www.youtube.com/watch?v=ZNSA0NrDeb4"
-                            class="play-btn style2 popup-video"><i class="fa-sharp fa-solid fa-play"></i></a></div>
-                </div>
-                <div class="col-lg-6">
-                    <div>
-                        <form action="" method="POST" class="contact-form style2" id="identify-form">
-                            <h3 class="sec-title mb-30 text-capitalize">contact us</h3>
-                            <div class="error-message" style="color: red; display: none;"></div>
-                            <div class="row">
-                                <div class="col-12 form-group"><input type="text" class="form-control" name="first_name"
-                                        id="name2" placeholder="First Name"> <img src="assets/img/icon/user.svg" alt="">
-                                </div>
-                                <div class="col-12 form-group"><input type="text" class="form-control" name="last_name"
-                                        id="name3" placeholder="lastname"> <img src="assets/img/icon/user.svg" alt="">
-                                </div>
-                                <div class="col-12 form-group"><input type="email" class="form-control" name="email"
-                                        id="email1" placeholder="Your Mail"> <img src="assets/img/icon/mail.svg" alt="">
-                                </div>
-                                <div class="col-12 form-group"><input type="email" class="form-control" name="email1"
-                                        id="email2" placeholder="Confirm your mail"> <img src="assets/img/icon/mail.svg" alt="">
-                                </div>
-                                <div class="col-12 form-group"><input type="date" class="form-control" name="date1"
-                                        id="d1" placeholder="toke date"> 
-                                </div>
-                                <div class="col-12 form-group"><input type="date" class="form-control" name="date2"
-                                        id="d2" placeholder="return date">
-                                </div>
-                                <div class="form-group col-12"><select name="sex" id="subject"
-                                        class="form-select nice-select">
-                                        <option value="Select Tour Type" selected="selected" disabled="disabled">sexe
-                                        </option>
-                                        <option>male</option>
-                                        <option>female</option>
-                                    </select></div>
-                                <div class="form-group col-12"><textarea name="message" id="message" cols="30" rows="3"
-                                        class="form-control" placeholder="Your Message"></textarea> <img
-                                        src="assets/img/icon/chat.svg" alt=""></div>
-                                <div class="form-btn col-12 mt-24"><button type="submit" class="th-btn style3" id="submit-btn">Book Now<img src="assets/img/icon/plane.svg" alt=""></button></div>
-                            </div>
-                            <p class="form-messages mb-0 mt-3"></p>
-                        </form>
+                <div class="col-auto">
+                    <div class="gallery-box style5">
+                        <div class="gallery-img global-img"><img src="assets/img/gallery/gallery_8_4.jpg"
+                                alt="gallery image"> <a href="assets/img/gallery/gallery_8_4.jpg"
+                                class="icon-btn popup-image"><i class="fal fa-magnifying-glass-plus"></i></a></div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="">
-        <div class="container-fluid">
-            <div class="contact-map style2"><iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.7310056272386!2d89.2286059153658!3d24.00527418490799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fe9b97badc6151%3A0x30b048c9fb2129bc!2sAngfuztheme!5e0!3m2!1sen!2sbd!4v1651028958211!5m2!1sen!2sbd"
-                    allowfullscreen="" loading="lazy"></iframe>
-                <div class="contact-icon"><img src="assets/img/icon/location-dot3.svg" alt=""></div>
+                <div class="col-auto">
+                    <div class="gallery-box style5">
+                        <div class="gallery-img global-img"><img src="assets/images/act/Library-activities-header.jpg"
+                                alt="gallery image"> <a href="assets/images/act/Library-activities-header.jpg"
+                                class="icon-btn popup-image"><i class="fal fa-magnifying-glass-plus"></i></a></div>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="gallery-box style5">
+                        <div class="gallery-img global-img"><img
+                                src="assets/images/act/pexels-thirdman-8926886_800x.webp" alt="gallery image"> <a
+                                href="assets/images/act/pexels-thirdman-8926886_800x.webp"
+                                class="icon-btn popup-image"><i class="fal fa-magnifying-glass-plus"></i></a></div>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="gallery-box style5">
+                        <div class="gallery-img global-img"><img
+                                src="assets/images/End-Panels_Activity_Hero_Woodridge_edit-768x576.jpg"
+                                alt="gallery image"> <a
+                                href="assets/images/End-Panels_Activity_Hero_Woodridge_edit-768x576.jpg"
+                                class="icon-btn popup-image"><i class="fal fa-magnifying-glass-plus"></i></a></div>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="gallery-box style5">
+                        <div class="gallery-img global-img"><img
+                                src="assets/images/act/Summer-at-the-Library-1-1024x576.png" alt="gallery image"> <a
+                                href="assets/images/act/Summer-at-the-Library-1-1024x576.png"
+                                class="icon-btn popup-image"><i class="fal fa-magnifying-glass-plus"></i></a></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -257,7 +225,7 @@
                     <div class="newsletter-top">
                         <div class="row gy-4 align-items-center">
                             <div class="col-lg-5">
-                                <h2 class="newsletter-title text-white text-capitalize mb-0">don't forget to subscribe
+                                <h2 class="newsletter-title text-white text-capitalize mb-0">don't forget to join us
                                 </h2>
                             </div>
                             <div class="col-lg-7">
@@ -276,9 +244,9 @@
                             <h3 class="widget_title">Quick Links</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="index.php">Home</a></li>
-                                    <li><a href="contact.php">Terms of Service</a></li>
-                                    <li><a href="contact.php">Tour Booking Now</a></li>
+                                    <li><a href="index.phtml">Home</a></li>
+                                    <li><a href="contact.phtml">Terms of Service</a></li>
+                                    <li><a href="contact.phtml">Tour Booking Now</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -290,8 +258,8 @@
                                 <div class="info-box_text">
                                     <div class="icon"><img src="assets/img/icon/phone.svg" alt="img"></div>
                                     <div class="details">
-                                        <p><a href="tel:+01234567890" class="info-box_link">+216 56 645 774</a></p>
-                                        <p><a href="tel:+09876543210" class="info-box_link">+216 00 000 000</a></p>
+                                        <p><a href="tel:+01234567890" class="info-box_link">+01 234 567 890</a></p>
+                                        <p><a href="tel:+09876543210" class="info-box_link">+09 876 543 210</a></p>
                                     </div>
                                 </div>
                                 <div class="info-box_text">
@@ -306,13 +274,12 @@
                                 <div class="info-box_text">
                                     <div class="icon"><img src="assets/img/icon/location-dot.svg" alt="img"></div>
                                     <div class="details">
-                                        <p>789 bizerte , tunise</p>
+                                        <p>bizerte , tunisia</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -415,100 +382,6 @@
     <script src="assets/js/nice-select.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/forms.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('identify-form');
-            const submitButton = document.getElementById('submit-btn');
-            
-            submitButton.addEventListener('click', function(event) {
-                event.preventDefault();
-                
-                handleContactRes(event);
-            });
-        });
-
-        function handleContactRes(event) {
-            const urlParams = new URLSearchParams(window.location.search);
-            const bookId = urlParams.get('book_id');
-            console.log("book Id:", bookId);
-
-            const firstName = document.getElementById('name2').value;
-            const lastName = document.getElementById('name3').value;
-            const email = document.getElementById('email1').value;
-            const confirmEmail = document.getElementById('email2').value;
-            const date1 = document.getElementById('d1').value;
-            const date2 = document.getElementById('d2').value;
-            const sexe = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-
-            if (!firstName || !lastName || !email || !confirmEmail || !date1 || !date2 || !sexe) {
-                showMessage('All fields except the message are required.', 'red');
-                return;
-            }
-
-            if (email !== confirmEmail) {
-                showMessage('Email and Confirm Email must match.', 'red');
-                return;
-            }
-
-            if (!validateEmail(email)) {
-                showMessage('Invalid email format.', 'red');
-                return;
-            }
-
-            const dateObj1 = new Date(date1);
-            const dateObj2 = new Date(date2);
-
-            if (dateObj2 <= dateObj1) {
-                showMessage('Date 2 must be later than Date 1.', 'red');
-                return;
-            }
-
-            const formData = new FormData();
-            formData.append('first_name', firstName);
-            formData.append('last_name', lastName);
-            formData.append('email', email);
-            formData.append('email1', confirmEmail);
-            formData.append('date1', date1);
-            formData.append('date2', date2);
-            formData.append('sex', sexe);
-            formData.append('message', message);
-            if (bookId) {
-                formData.append('book_id', bookId);
-            }
-
-            fetch('/library/php/contact_res.php', {
-                method: 'POST',
-                body: formData
-            })
-                .then(response => response.json())
-                .then(data => {
-                    const errorMessageBox = document.querySelector('.error-message');
-                    if (data.status === 'error') {
-                        showMessage(data.message, 'red');
-                    } else if (data.status === 'success') {
-                        showMessage(data.message, 'green');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    showMessage('An unexpected error occurred. Please try again.', 'red');
-                });
-            }
-
-            function showMessage(message, color) {
-                const errorMessageBox = document.querySelector('.error-message');
-                errorMessageBox.textContent = message;
-                errorMessageBox.style.color = color;
-                errorMessageBox.style.display = 'block';
-            }
-
-            function validateEmail(email) {
-                const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-                return emailPattern.test(email);
-            }
-
-    </script>
 </body>
 
 </html>

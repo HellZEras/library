@@ -58,6 +58,6 @@ try {
     $error = "Database connection failed: " . $e->getMessage();
     echo $error;
     sleep(2);
-    header("Location: /library/index.php");
+    header("Location: /library/index.phtml");
     exit();
 }

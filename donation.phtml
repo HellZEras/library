@@ -1,6 +1,5 @@
 <?php
     require_once('php/config.php');
-    require('php/helpers.php');
 ?>
 <!doctype html>
 <html class="no-js" lang="zxx">
@@ -55,20 +54,20 @@
             <div class="th-mobile-menu">
                 <ul>
                     <img src="assets/images/spl-stickylogo.png" alt="">
-                    <li class="menu-item-has-children"><a href="activities.php">Activities</a>
+                    <li class="menu-item-has-children"><a href="activities.phtml">Activities</a>
                     </li>
                     <li class="menu-item-has-children"><a href="#">Pages</a>
                         <ul>
-                            <li><a href="activites.php">Activities</a></li>
-                            <li><a href="shop.php">Book Shop</a></li>
-                            <li><a href="reservation.php">Book Reservation</a></li>
-                            <li><a href="donation.php">Donation</a></li>
-                            <li><a href="contact.php">Contact us</a></li>
+                            <li><a href="activites.phtml">Activities</a></li>
+                            <li><a href="shop.phtml">Book Shop</a></li>
+                            <li><a href="reservation.phtml">Book Reservation</a></li>
+                            <li><a href="donation.phtml">Donation</a></li>
+                            <li><a href="contact.phtml">Contact us</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item-has-children"><a href="donation.php">donation</a>
+                    <li class="menu-item-has-children"><a href="donation.phtml">donation</a>
                     </li>
-                    <li><a href="contact.php">Contact us</a></li>
+                    <li><a href="contact.phtml">Contact us</a></li>
                 </ul>
             </div>
         </div>
@@ -86,7 +85,7 @@
                                     <?php if (isset($_SESSION['username'])): ?>
                                         <li>
                                             Hello, 
-                                            <a href="profile.php?username=<?php echo urlencode($_SESSION['username']); ?>" style="color: cyan; text-decoration: underline;">
+                                            <a href="profile.phtml?username=<?php echo urlencode($_SESSION['username']); ?>" style="color: cyan; text-decoration: underline;">
                                                 <?php echo htmlspecialchars($_SESSION['username']); ?>
                                             </a>!
                                         </li>
@@ -108,23 +107,23 @@
                 <div class="container th-container">
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto">
-                            <div class="header-logo"><a href="index.php"><img
+                            <div class="header-logo"><a href="index.phtml"><img
                                         src="assets/images/spl-stickylogo.png" alt="Tourm"></a></div>
                         </div>
                         <div class="col-auto me-xl-auto">
                             <nav class="main-menu d-none d-xl-inline-block">
                                 <ul>
-                                    <li><a href="activites.php">Activities</a></li>
-                                    <li><a href="shop.php">Book Shop</a></li>
-                                    <li><a href="reservation.php">Book Reservation</a></li>
-                                    <li><a href="donation.php">Donation</a></li>
-                                    <li><a href="contact.php">Contact us</a></li>
+                                    <li><a href="activites.phtml">Activities</a></li>
+                                    <li><a href="shop.phtml">Book Shop</a></li>
+                                    <li><a href="reservation.phtml">Book Reservation</a></li>
+                                    <li><a href="donation.phtml">Donation</a></li>
+                                    <li><a href="contact.phtml">Contact us</a></li>
                                 </ul>
                             </nav><button type="button" class="th-menu-toggle d-block d-xl-none"><i
                                     class="far fa-bars"></i></button>
                         </div>
                         <div class="col-auto d-none d-xl-block">
-                            <div class="header-button"><a href="reservation.php" class="th-btn style3 th-icon">Book Now</a>
+                            <div class="header-button"><a href="reservation.phtml" class="th-btn style3 th-icon">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -135,28 +134,108 @@
     <div class="breadcumb-wrapper" data-bg-src="assets/img/hero/menu2.jpeg">
         <div class="container">
             <div class="breadcumb-content">
-                <h1 class="breadcumb-title">book takeout</h1>
+                <h1 class="breadcumb-title">Contact Us</h1>
                 <ul class="breadcumb-menu">
                     <li><a href="home-travel.php">Home</a></li>
-                    <li>About books</li>
+                    <li>Contact Us</li>
                 </ul>
             </div>
         </div>
     </div>
-    <br><br><br><br><br><br><br>
-    <section class="position-relative overflow-hidden space-bottom" id="destination-sec">
+    <div class="space">
         <div class="container">
-            <div class="title-area text-center"><span class="sub-title">Services We Offer</span>
-                <h2 class="sec-title">Our Amazing collection</h2>
+            <div class="title-area text-center"><span class="sub-title">Get In Touch</span>
+                <h2 class="sec-title">Our Contact Information</h2>
             </div>
-            <div class="row gy-4 gx-4">
-                <?php displayShopBooks() ?>
+            <div class="row gy-4 justify-content-center">
+                <div class="col-xl-4 col-lg-6">
+                    <div class="about-contact-grid style2">
+                        <div class="about-contact-icon"><img src="assets/img/icon/location-dot2.svg" alt=""></div>
+                        <div class="about-contact-details">
+                            <h6 class="box-title">Our Address</h6>
+                            <p class="about-contact-details-text">177 bizerte , tunise</p>
+                            <p class="about-contact-details-text">Road to manzel abd rahmen</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <div class="about-contact-grid">
+                        <div class="about-contact-icon"><img src="assets/img/icon/call.svg" alt=""></div>
+                        <div class="about-contact-details">
+                            <h6 class="box-title">Phone Number</h6>
+                            <p class="about-contact-details-text"><a href="tel:01234567890">+216 56 645 774</a></p>
+                            <p class="about-contact-details-text"><a href="tel:01234567890">+216 00 000 000</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <div class="about-contact-grid">
+                        <div class="about-contact-icon"><img src="assets/img/icon/mail.svg" alt=""></div>
+                        <div class="about-contact-details">
+                            <h6 class="box-title">Email Address</h6>
+                            <p class="about-contact-details-text"><a
+                                    href="mailto:mailinfo00@tourm.com">suppor14@gmail.com</a></p>
+                            <p class="about-contact-details-text"><a
+                                    href="mailto:support24@tourm.com">support2@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-    <div class="elements-sec bg-white overflow-hidden">
+    </div>
+    <div class="space-extra2-top space-extra2-bottom" data-bg-src="assets/img/hero/menu33.jpeg">
+        <div class="container">
+            <div class="row flex-row-reverse justify-content-center align-items-center">
+                <div class="col-lg-6">
+                    <div class="video-box1"><a href="https://www.youtube.com/watch?v=cQfIUPw72Dk"
+                            class="play-btn style2 popup-video"><i class="fa-sharp fa-solid fa-play"></i></a></div>
+                </div>
+                <div class="col-lg-6">
+                    <div>
+                        <form class="contact-form style2">
+                            <h3 class="sec-title mb-30 text-capitalize">donation</h3>
+                            <div class="error-message" style="color: red; display: none;"></div>
+                            <div class="row">
+                                <div class="col-12 form-group">
+                                    <input type="text" class="form-control" name="name" id="name3" placeholder="First Name">
+                                    <img src="assets/img/icon/user.svg" alt="">
+                                </div>
+                                <div class="col-12 form-group">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Mail">
+                                    <img src="assets/img/icon/mail.svg" alt="">
+                                </div>
+                                <div class="form-group col-12">
+                                    <select name="subject" id="subject" class="form-select nice-select" itemid="sec">
+                                        <option value="Select Tour Type" selected="selected" disabled="disabled">money</option>
+                                        <option>+ 10dt</option>
+                                        <option>+ 20dt</option>
+                                        <option>+ 50dt</option>
+                                        <option>+ 100dt</option>
+                                        <option>+ 200dt</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12">
+                                    <textarea name="message" id="message" cols="30" rows="3" class="form-control" placeholder="Your Message"></textarea>
+                                    <img src="assets/img/icon/chat.svg" alt="">
+                                </div>
+                                <div class="form-btn col-12 mt-24">
+                                    <button type="button" class="th-btn style3" onclick="handleDonationClick(event)">Send money <img src="assets/img/icon/plane.svg" alt=""></button>
+                                </div>
+                            </div>
+                            <p class="form-messages mb-0 mt-3"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="">
         <div class="container-fluid">
-            <div class="tags-container relative"></div>
+            <div class="contact-map style2"><iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.7310056272386!2d89.2286059153658!3d24.00527418490799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fe9b97badc6151%3A0x30b048c9fb2129bc!2sAngfuztheme!5e0!3m2!1sen!2sbd!4v1651028958211!5m2!1sen!2sbd"
+                    allowfullscreen="" loading="lazy"></iframe>
+                <div class="contact-icon"><img src="assets/img/icon/location-dot3.svg" alt=""></div>
+            </div>
         </div>
     </div>
     <footer class="footer-wrapper bg-title footer-layout2">
@@ -166,7 +245,7 @@
                     <div class="newsletter-top">
                         <div class="row gy-4 align-items-center">
                             <div class="col-lg-5">
-                                <h2 class="newsletter-title text-white text-capitalize mb-0">don't forget to join us
+                                <h2 class="newsletter-title text-white text-capitalize mb-0">don't forget to subscribe
                                 </h2>
                             </div>
                             <div class="col-lg-7">
@@ -185,9 +264,9 @@
                             <h3 class="widget_title">Quick Links</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="index.php">Home</a></li>
-                                    <li><a href="contact.php">Terms of Service</a></li>
-                                    <li><a href="contact.php">Tour Booking Now</a></li>
+                                    <li><a href="index.phtml">Home</a></li>
+                                    <li><a href="contact.phtml">Terms of Service</a></li>
+                                    <li><a href="contact.phtml">Tour Booking Now</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -199,8 +278,8 @@
                                 <div class="info-box_text">
                                     <div class="icon"><img src="assets/img/icon/phone.svg" alt="img"></div>
                                     <div class="details">
-                                        <p><a href="tel:+01234567890" class="info-box_link">+01 234 567 890</a></p>
-                                        <p><a href="tel:+09876543210" class="info-box_link">+09 876 543 210</a></p>
+                                        <p><a href="tel:+01234567890" class="info-box_link">+216 56 645 774</a></p>
+                                        <p><a href="tel:+09876543210" class="info-box_link">+216 00 000 000</a></p>
                                     </div>
                                 </div>
                                 <div class="info-box_text">
@@ -215,12 +294,13 @@
                                 <div class="info-box_text">
                                     <div class="icon"><img src="assets/img/icon/location-dot.svg" alt="img"></div>
                                     <div class="details">
-                                        <p>bizerte , tunisia</p>
+                                        <p>789 bizerte , tunise</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

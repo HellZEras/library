@@ -51,7 +51,7 @@
                         } elseif (!$isLoggedIn) {
                             echo '<a href="#" class="th-btn style4 th-icon" style="pointer-events: none; opacity: 0.5;">Buy now</a>';
                         } else {
-                            echo '<a href="checkout.php?book_id=' . htmlspecialchars($book['id']) . '" class="th-btn style4 th-icon">Buy now</a>';
+                            echo '<a href="checkout.phtml?book_id=' . htmlspecialchars($book['id']) . '" class="th-btn style4 th-icon">Buy now</a>';
                         }
     
                         echo '</div>';
@@ -235,7 +235,7 @@
                         } elseif (!$isLoggedIn) {
                             echo '<a href="#" class="th-btn style4 th-icon" style="pointer-events: none; opacity: 0.5;">Book now</a>';
                         } else {
-                            echo '<a href="contact_res.php?book_id=' . htmlspecialchars($book['id']) . '" class="th-btn style4 th-icon">Book now</a>';
+                            echo '<a href="contact_res.phtml?book_id=' . htmlspecialchars($book['id']) . '" class="th-btn style4 th-icon">Book now</a>';
                         }
     
                         echo '</div>';

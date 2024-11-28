@@ -42,6 +42,14 @@
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+<style>
+    .error-message {
+        font-size: 14px;
+        font-weight: bold;
+        color: red;
+        margin-top: 5px;
+    }
+</style>
 
 <body>
     <div class="magic-cursor relative z-10">
@@ -54,20 +62,20 @@
             <div class="th-mobile-menu">
                 <ul>
                     <img src="assets/images/spl-stickylogo.png" alt="">
-                    <li class="menu-item-has-children"><a href="activities.php">Activities</a>
+                    <li class="menu-item-has-children"><a href="activities.phtml">Activities</a>
                     </li>
                     <li class="menu-item-has-children"><a href="#">Pages</a>
                         <ul>
-                            <li><a href="activites.php">Activities</a></li>
-                            <li><a href="shop.php">Book Shop</a></li>
-                            <li><a href="reservation.php">Book Reservation</a></li>
-                            <li><a href="donation.php">Donation</a></li>
-                            <li><a href="contact.php">Contact us</a></li>
+                            <li><a href="activites.phtml">Activities</a></li>
+                            <li><a href="shop.phtml">Book Shop</a></li>
+                            <li><a href="reservation.phtml">Book Reservation</a></li>
+                            <li><a href="donation.phtml">Donation</a></li>
+                            <li><a href="contact.phtml">Contact us</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item-has-children"><a href="donation.php">donation</a>
+                    <li class="menu-item-has-children"><a href="donation.phtml">donation</a>
                     </li>
-                    <li><a href="contact.php">Contact us</a></li>
+                    <li><a href="contact.phtml">Contact us</a></li>
                 </ul>
             </div>
         </div>
@@ -85,7 +93,7 @@
                                     <?php if (isset($_SESSION['username'])): ?>
                                         <li>
                                             Hello, 
-                                            <a href="profile.php?username=<?php echo urlencode($_SESSION['username']); ?>" style="color: cyan; text-decoration: underline;">
+                                            <a href="profile.phtml?username=<?php echo urlencode($_SESSION['username']); ?>" style="color: cyan; text-decoration: underline;">
                                                 <?php echo htmlspecialchars($_SESSION['username']); ?>
                                             </a>!
                                         </li>
@@ -107,23 +115,23 @@
                 <div class="container th-container">
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto">
-                            <div class="header-logo"><a href="index.php"><img
+                            <div class="header-logo"><a href="index.phtml"><img
                                         src="assets/images/spl-stickylogo.png" alt="Tourm"></a></div>
                         </div>
                         <div class="col-auto me-xl-auto">
                             <nav class="main-menu d-none d-xl-inline-block">
                                 <ul>
-                                    <li><a href="activites.php">Activities</a></li>
-                                    <li><a href="shop.php">Book Shop</a></li>
-                                    <li><a href="reservation.php">Book Reservation</a></li>
-                                    <li><a href="donation.php">Donation</a></li>
-                                    <li><a href="contact.php">Contact us</a></li>
+                                    <li><a href="activites.phtml">Activities</a></li>
+                                    <li><a href="shop.phtml">Book Shop</a></li>
+                                    <li><a href="reservation.phtml">Book Reservation</a></li>
+                                    <li><a href="donation.phtml">Donation</a></li>
+                                    <li><a href="contact.phtml">Contact us</a></li>
                                 </ul>
                             </nav><button type="button" class="th-menu-toggle d-block d-xl-none"><i
                                     class="far fa-bars"></i></button>
                         </div>
                         <div class="col-auto d-none d-xl-block">
-                            <div class="header-button"><a href="reservation.php" class="th-btn style3 th-icon">Book Now</a>
+                            <div class="header-button"><a href="reservation.phtml" class="th-btn style3 th-icon">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -187,40 +195,40 @@
         <div class="container">
             <div class="row flex-row-reverse justify-content-center align-items-center">
                 <div class="col-lg-6">
-                    <div class="video-box1"><a href="https://www.youtube.com/watch?v=cQfIUPw72Dk"
-                            class="play-btn style2 popup-video"><i class="fa-sharp fa-solid fa-play"></i></a></div>
-                </div>
+                    <div class="video-box1">
+                        <a href="https://www.youtube.com/watch?v=ZNSA0NrDeb4" class="play-btn style2 popup-video"><i class="fa-sharp fa-solid fa-play"></i></a>
+                    </div>
+            </div>
                 <div class="col-lg-6">
                     <div>
-                        <form class="contact-form style2">
-                            <h3 class="sec-title mb-30 text-capitalize">donation</h3>
+                        <form action="" method="POST" class="contact-form style2">
+                            <h3 class="sec-title mb-30 text-capitalize">contact us</h3>
                             <div class="error-message" style="color: red; display: none;"></div>
                             <div class="row">
-                                <div class="col-12 form-group">
-                                    <input type="text" class="form-control" name="name" id="name3" placeholder="First Name">
-                                    <img src="assets/img/icon/user.svg" alt="">
+                                <div class="col-12 form-group"><input type="text" class="form-control" name="name1"
+                                        id="name3" placeholder="First Name"> <img src="assets/img/icon/user.svg" alt="">
                                 </div>
-                                <div class="col-12 form-group">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Mail">
-                                    <img src="assets/img/icon/mail.svg" alt="">
+                                <div class="col-12 form-group"><input type="text" class="form-control" name="name2"
+                                        id="name2" placeholder="lastname"> <img src="assets/img/icon/user.svg" alt="">
                                 </div>
-                                <div class="form-group col-12">
-                                    <select name="subject" id="subject" class="form-select nice-select" itemid="sec">
-                                        <option value="Select Tour Type" selected="selected" disabled="disabled">money</option>
-                                        <option>+ 10dt</option>
-                                        <option>+ 20dt</option>
-                                        <option>+ 50dt</option>
-                                        <option>+ 100dt</option>
-                                        <option>+ 200dt</option>
-                                    </select>
+                                <div class="col-12 form-group"><input type="email" class="form-control" name="email3"
+                                        id="email3" placeholder="Your Mail"> <img src="assets/img/icon/mail.svg" alt="">
                                 </div>
-                                <div class="form-group col-12">
-                                    <textarea name="message" id="message" cols="30" rows="3" class="form-control" placeholder="Your Message"></textarea>
-                                    <img src="assets/img/icon/chat.svg" alt="">
+                                <div class="col-12 form-group"><input type="text" class="form-control" name="num"
+                                        id="num" placeholder="phone number"> <img src="assets/img/icon/mail.svg" alt="">
                                 </div>
-                                <div class="form-btn col-12 mt-24">
-                                    <button type="button" class="th-btn style3" onclick="handleDonationClick(event)">Send money <img src="assets/img/icon/plane.svg" alt=""></button>
-                                </div>
+                                <div class="form-group col-12"><select name="subject" id="subject"
+                                        class="form-select nice-select">
+                                        <option value="Select Tour Type" selected="selected" disabled="disabled">sexe
+                                        </option>
+                                        <option>male</option>
+                                        <option>female</option>
+                                    </select></div>
+                                <div class="form-group col-12"><textarea name="message" id="message" cols="30" rows="3"
+                                        class="form-control" placeholder="Your Message"></textarea> <img
+                                        src="assets/img/icon/chat.svg" alt=""></div>
+                                <div class="form-btn col-12 mt-24"><button type="submit" class="th-btn style3" onclick=handleContactFormSubmit(event)>Send
+                                        message <img src="assets/img/icon/plane.svg" alt=""></button></div>
                             </div>
                             <p class="form-messages mb-0 mt-3"></p>
                         </form>
@@ -264,9 +272,9 @@
                             <h3 class="widget_title">Quick Links</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="index.php">Home</a></li>
-                                    <li><a href="contact.php">Terms of Service</a></li>
-                                    <li><a href="contact.php">Tour Booking Now</a></li>
+                                    <li><a href="index.phtml">Home</a></li>
+                                    <li><a href="contact.phtml">Terms of Service</a></li>
+                                    <li><a href="contact.phtml">Tour Booking Now</a></li>
                                 </ul>
                             </div>
                         </div>

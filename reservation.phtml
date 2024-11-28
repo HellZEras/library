@@ -55,20 +55,20 @@
             <div class="th-mobile-menu">
                 <ul>
                     <img src="assets/images/spl-stickylogo.png" alt="">
-                    <li class="menu-item-has-children"><a href="activities.php">Activities</a>
+                    <li class="menu-item-has-children"><a href="activities.phtml">Activities</a>
                     </li>
                     <li class="menu-item-has-children"><a href="#">Pages</a>
                         <ul>
-                            <li><a href="activites.php">Activities</a></li>
-                            <li><a href="shop.php">Book Shop</a></li>
-                            <li><a href="reservation.php">Book Reservation</a></li>
-                            <li><a href="donation.php">Donation</a></li>
-                            <li><a href="contact.php">Contact us</a></li>
+                            <li><a href="activites.phtml">Activities</a></li>
+                            <li><a href="shop.phtml">Book Shop</a></li>
+                            <li><a href="reservation.phtml">Book Reservation</a></li>
+                            <li><a href="donation.phtml">Donation</a></li>
+                            <li><a href="contact.phtml">Contact us</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item-has-children"><a href="donation.php">donation</a>
+                    <li class="menu-item-has-children"><a href="donation.phtml">donation</a>
                     </li>
-                    <li><a href="contact.php">Contact us</a></li>
+                    <li><a href="contact.phtml">Contact us</a></li>
                 </ul>
             </div>
         </div>
@@ -86,7 +86,7 @@
                                     <?php if (isset($_SESSION['username'])): ?>
                                         <li>
                                             Hello, 
-                                            <a href="profile.php?username=<?php echo urlencode($_SESSION['username']); ?>" style="color: cyan; text-decoration: underline;">
+                                            <a href="profile.phtml?username=<?php echo urlencode($_SESSION['username']); ?>" style="color: cyan; text-decoration: underline;">
                                                 <?php echo htmlspecialchars($_SESSION['username']); ?>
                                             </a>!
                                         </li>
@@ -108,23 +108,23 @@
                 <div class="container th-container">
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto">
-                            <div class="header-logo"><a href="index.php"><img
+                            <div class="header-logo"><a href="index.phtml"><img
                                         src="assets/images/spl-stickylogo.png" alt="Tourm"></a></div>
                         </div>
                         <div class="col-auto me-xl-auto">
                             <nav class="main-menu d-none d-xl-inline-block">
                                 <ul>
-                                    <li><a href="activites.php">Activities</a></li>
-                                    <li><a href="shop.php">Book Shop</a></li>
-                                    <li><a href="reservation.php">Book Reservation</a></li>
-                                    <li><a href="donation.php">Donation</a></li>
-                                    <li><a href="contact.php">Contact us</a></li>
+                                    <li><a href="activites.phtml">Activities</a></li>
+                                    <li><a href="shop.phtml">Book Shop</a></li>
+                                    <li><a href="reservation.phtml">Book Reservation</a></li>
+                                    <li><a href="donation.phtml">Donation</a></li>
+                                    <li><a href="contact.phtml">Contact us</a></li>
                                 </ul>
                             </nav><button type="button" class="th-menu-toggle d-block d-xl-none"><i
                                     class="far fa-bars"></i></button>
                         </div>
                         <div class="col-auto d-none d-xl-block">
-                            <div class="header-button"><a href="reservation.php" class="th-btn style3 th-icon">Book Now</a>
+                            <div class="header-button"><a href="reservation.phtml" class="th-btn style3 th-icon">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -185,9 +185,9 @@
                             <h3 class="widget_title">Quick Links</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="index.php">Home</a></li>
-                                    <li><a href="contact.php">Terms of Service</a></li>
-                                    <li><a href="contact.php">Tour Booking Now</a></li>
+                                    <li><a href="index.phtml">Home</a></li>
+                                    <li><a href="contact.phtml">Terms of Service</a></li>
+                                    <li><a href="contact.phtml">Tour Booking Now</a></li>
                                 </ul>
                             </div>
                         </div>

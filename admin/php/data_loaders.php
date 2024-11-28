@@ -99,8 +99,7 @@ function getTotalProfit() {
 
 function renderSalesBlock() {
   $totalProfit = getTotalProfit();
-  // Ensure $totalProfit is a valid number, default to 0 if NULL or invalid
-  $formattedProfit = number_format($totalProfit ?? 0, 2, '.', ',') . ' dt'; // Format with two decimals and currency
+  $formattedProfit = number_format($totalProfit ?? 0, 2, '.', ',') . ' $'; 
 
   echo "
       <div class=\"col-xl-3 col-sm-6\">
