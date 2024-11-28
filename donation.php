@@ -89,7 +89,7 @@
                                                 <?php echo htmlspecialchars($_SESSION['username']); ?>
                                             </a>!
                                         </li>
-                                        <a href="/libary/php/logout.php">Logout</a>
+                                        <a href="/library/php/logout.php">Logout</a>
                                     <?php else: ?>
                                         <li class="d-none d-md-inline-block"><a href="faq.php">FAQ</a></li>
                                         <li class="d-none d-md-inline-block"><a href="contact.php">Support</a></li>
