@@ -1,7 +1,7 @@
 
 <?php 
     function initConn(){
-        $conn = new PDO('mysql:host=localhost;dbname=Library','root','');
+        $conn = new PDO('mysql:host=localhost;dbname=library','root','');
         return $conn;
     }
 

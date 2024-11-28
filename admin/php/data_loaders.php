@@ -1,7 +1,7 @@
 <?php 
 function initConn(){
     try {
-        $conn = new PDO('mysql:host=localhost;dbname=Library', 'root', '');
+        $conn = new PDO('mysql:host=localhost;dbname=library', 'root', '');
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $conn;
     } catch (PDOException $e) {
